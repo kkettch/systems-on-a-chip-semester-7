@@ -1,0 +1,20 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+Block Memory Generator module dev_tb.DUT.design_1_i.microblaze_0_local_memory.lmb_bram.inst.native_mem_mapped_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 68 is not valid.
+WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 69 is not valid.
+WARNING: File/Multi-channel descriptor (-20000) passed to $fclose in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 70 is not valid.
+WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 68 is not valid.
+WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 69 is not valid.
+WARNING: File/Multi-channel descriptor (-20000) passed to $fclose in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 70 is not valid.
+? Incorrect result at index 0: expected=22, got=3
+? Incorrect result at index 1: expected=27, got=5
+? Incorrect result at index 2: expected=2c, got=7
+? Incorrect result at index 3: expected=4c, got=9
+? Incorrect result at index 4: expected=5a, got=b
+? Incorrect result at index 5: expected=68, got=d
+? Incorrect result at index 6: expected=76, got=f
+? Incorrect result at index 7: expected=8d, got=11
+? Incorrect result at index 8: expected=a4, got=13
+?? Total mismatches: 9
+$finish called at time : 49035 ns : File "H:/lab1/lab1.srcs/sim_1/new/scoreboard.sv" Line 90

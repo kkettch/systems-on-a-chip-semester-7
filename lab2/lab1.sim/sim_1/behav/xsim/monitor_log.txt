@@ -1,0 +1,34 @@
+
+=== Matrix A captured at 215000 ns ===
+A[0] = 0001
+A[1] = 0002
+A[2] = 0003
+A[3] = 0004
+A[4] = 0005
+A[5] = 0006
+A[6] = 0007
+A[7] = 0008
+A[8] = 0009
+
+=== Matrix B captured at 19355000 ns ===
+B[0] = 0002
+B[1] = 0003
+B[2] = 0004
+B[3] = 0005
+B[4] = 0006
+B[5] = 0007
+B[6] = 0008
+B[7] = 0009
+B[8] = 000a
+Time 38925000 ns | Result[0]=03
+Time 40185000 ns | Result[1]=05
+Time 41445000 ns | Result[2]=07
+Time 42705000 ns | Result[3]=09
+Time 43965000 ns | Result[4]=0b
+Time 45225000 ns | Result[5]=0d
+Time 46485000 ns | Result[6]=0f
+Time 47745000 ns | Result[7]=11
+Time 49005000 ns | Result[8]=13
+
+=== Algorithm finished ===
+Execution time: 48820000 ns

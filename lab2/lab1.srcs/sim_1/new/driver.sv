@@ -20,11 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module driver(
+module driver#(
+    parameter int SIZE = 64
+)(
     input clk,
     input rst,
     
-    input [15:0] sequence_i[9],
+    input [15:0] sequence_i[SIZE],
     input sequence_valid,
     output logic sequence_send,
     
@@ -38,15 +40,17 @@ module driver(
     logic state;
     logic recieve;
     
-    logic [15:0] temp_matrix [9];
-    logic [3:0] temp_idx;
+    logic [15:0] temp_matrix [SIZE];
+    logic [6:0] temp_idx;
     
-    wire send_vld = gpio_switch[15]; // если усспешно отправили, то выставится на лампочку
-    wire recieve_vld = gpio_led[15]; // входной ACK от Data 
+    int i;
+    
+    wire send_vld = gpio_switch[15]; 
+    wire recieve_vld = gpio_led[15]; 
     
     always_ff @(posedge clk) begin
         if (rst) begin
-            for (int i = 0; i < 9; i++) begin
+            for (int i = 0; i < SIZE; i++) begin
                 temp_matrix[i] <= '0;
             end
             temp_idx <= '0;
@@ -65,12 +69,12 @@ module driver(
                     sequence_send <= '0;
                 end
                 SEND_SEQ: begin
-                    if (temp_idx == 9) begin
+                    if (temp_idx == SIZE) begin
                         state <= WAIT_SEQ;
                         sequence_send <= '1;
                     end else begin
                         if (send_vld) begin
-                            if (recieve && !recieve_vld) begin // Факт окончания приема от DUT
+                            if (recieve && !recieve_vld) begin 
                                 temp_idx <= temp_idx + 1'b1;
                                 gpio_switch <= '0;
                                 recieve <= '0;

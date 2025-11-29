@@ -8,7 +8,8 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
  ../../prog1_bsp/microblaze_0/include/xil_printf.h \
  ../../prog1_bsp/microblaze_0/include/mb_interface.h \
  ../../prog1_bsp/microblaze_0/include/xil_assert.h \
- ../../prog1_bsp/microblaze_0/include/xil_exception.h
+ ../../prog1_bsp/microblaze_0/include/xil_exception.h ../src/matrix.h \
+ ../src/gpio.h
 
 ../src/platform.h:
 
@@ -31,3 +32,7 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
 ../../prog1_bsp/microblaze_0/include/xil_assert.h:
 
 ../../prog1_bsp/microblaze_0/include/xil_exception.h:
+
+../src/matrix.h:
+
+../src/gpio.h:

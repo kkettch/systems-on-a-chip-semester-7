@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/s369027/Desktop/lab3/lab3-vivado-HLS/solution1/sim/verilog/AESL_axi_slave_AXILiteS.v,1764233046,systemVerilog,,,,AESL_axi_slave_AXILiteS,C:/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini,axi_protocol_checker_v1_1_12;axi_protocol_checker_v1_1_13;axis_protocol_checker_v1_1_11;axis_protocol_checker_v1_1_12;ieee_proposed=./ieee_proposed;smartconnect_v1_0;unisims_ver;xil_defaultlib;xpm,,,,,,
+C:/Users/s369027/Desktop/lab3/lab3-vivado-HLS/solution1/sim/verilog/calc.autotb.v,1764233046,systemVerilog,,,,apatb_calc_top,C:/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini,axi_protocol_checker_v1_1_12;axi_protocol_checker_v1_1_13;axis_protocol_checker_v1_1_11;axis_protocol_checker_v1_1_12;ieee_proposed=./ieee_proposed;smartconnect_v1_0;unisims_ver;xil_defaultlib;xpm,,,,,,
+C:/Users/s369027/Desktop/lab3/lab3-vivado-HLS/solution1/sim/verilog/calc.v,1764233023,systemVerilog,,,,calc,C:/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini,axi_protocol_checker_v1_1_12;axi_protocol_checker_v1_1_13;axis_protocol_checker_v1_1_11;axis_protocol_checker_v1_1_12;ieee_proposed=./ieee_proposed;smartconnect_v1_0;unisims_ver;xil_defaultlib;xpm,,,,,,
+C:/Users/s369027/Desktop/lab3/lab3-vivado-HLS/solution1/sim/verilog/calc_AXILiteS_s_axi.v,1764233024,systemVerilog,,,,calc_AXILiteS_s_axi;calc_AXILiteS_s_axi_ram,C:/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini,axi_protocol_checker_v1_1_12;axi_protocol_checker_v1_1_13;axis_protocol_checker_v1_1_11;axis_protocol_checker_v1_1_12;ieee_proposed=./ieee_proposed;smartconnect_v1_0;unisims_ver;xil_defaultlib;xpm,,,,,,
+C:/Users/s369027/Desktop/lab3/lab3-vivado-HLS/solution1/sim/verilog/calc_tmp.v,1764233024,systemVerilog,,,,calc_tmp;calc_tmp_ram,C:/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini,axi_protocol_checker_v1_1_12;axi_protocol_checker_v1_1_13;axis_protocol_checker_v1_1_11;axis_protocol_checker_v1_1_12;ieee_proposed=./ieee_proposed;smartconnect_v1_0;unisims_ver;xil_defaultlib;xpm,,,,,,

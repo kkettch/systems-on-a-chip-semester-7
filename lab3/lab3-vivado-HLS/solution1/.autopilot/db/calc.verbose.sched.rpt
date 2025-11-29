@@ -1,0 +1,1353 @@
+
+
+================================================================
+== Vivado HLS Report for 'calc'
+================================================================
+* Date:           Thu Nov 27 11:43:42 2025
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        lab3-vivado-HLS
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.470|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  202|  202|  202|  202|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   70|   70|        15|          8|          1|     8|    yes   |
+        |- Loop 2  |   64|   64|         9|          8|          1|     8|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 8, depth = 15
+  * Pipeline-1: initiation interval (II) = 8, depth = 9
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 91
+* Pipeline : 2
+  Pipeline-0 : II = 8, D = 15, States = { 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 }
+  Pipeline-1 : II = 8, D = 9, States = { 82 83 84 85 86 87 88 89 90 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 81 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 66 
+81 --> 82 
+82 --> 91 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 82 
+91 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.15>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%tmp = alloca [64 x i32], align 16" [code/matrix.c:13]   --->   Operation 92 'alloca' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%B_addr = getelementptr [64 x i32]* %B, i64 0, i64 0" [code/matrix.c:20]   --->   Operation 93 'getelementptr' 'B_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [2/2] (2.15ns)   --->   "%B_load = load i32* %B_addr, align 4" [code/matrix.c:20]   --->   Operation 94 'load' 'B_load' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 2 <SV = 1> <Delay = 2.15>
+ST_2 : Operation 95 [1/2] (2.15ns)   --->   "%B_load = load i32* %B_addr, align 4" [code/matrix.c:20]   --->   Operation 95 'load' 'B_load' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%B_addr_1 = getelementptr [64 x i32]* %B, i64 0, i64 8" [code/matrix.c:20]   --->   Operation 96 'getelementptr' 'B_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [2/2] (2.15ns)   --->   "%B_load_8 = load i32* %B_addr_1, align 4" [code/matrix.c:20]   --->   Operation 97 'load' 'B_load_8' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 3 <SV = 2> <Delay = 2.15>
+ST_3 : Operation 98 [1/2] (2.15ns)   --->   "%B_load_8 = load i32* %B_addr_1, align 4" [code/matrix.c:20]   --->   Operation 98 'load' 'B_load_8' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%B_addr_2 = getelementptr [64 x i32]* %B, i64 0, i64 16" [code/matrix.c:20]   --->   Operation 99 'getelementptr' 'B_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 100 [2/2] (2.15ns)   --->   "%B_load_9 = load i32* %B_addr_2, align 4" [code/matrix.c:20]   --->   Operation 100 'load' 'B_load_9' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 4 <SV = 3> <Delay = 2.15>
+ST_4 : Operation 101 [1/2] (2.15ns)   --->   "%B_load_9 = load i32* %B_addr_2, align 4" [code/matrix.c:20]   --->   Operation 101 'load' 'B_load_9' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%B_addr_3 = getelementptr [64 x i32]* %B, i64 0, i64 24" [code/matrix.c:20]   --->   Operation 102 'getelementptr' 'B_addr_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 103 [2/2] (2.15ns)   --->   "%B_load_10 = load i32* %B_addr_3, align 4" [code/matrix.c:20]   --->   Operation 103 'load' 'B_load_10' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 5 <SV = 4> <Delay = 2.15>
+ST_5 : Operation 104 [1/2] (2.15ns)   --->   "%B_load_10 = load i32* %B_addr_3, align 4" [code/matrix.c:20]   --->   Operation 104 'load' 'B_load_10' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_5 : Operation 105 [1/1] (0.00ns)   --->   "%B_addr_4 = getelementptr [64 x i32]* %B, i64 0, i64 32" [code/matrix.c:20]   --->   Operation 105 'getelementptr' 'B_addr_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 106 [2/2] (2.15ns)   --->   "%B_load_11 = load i32* %B_addr_4, align 4" [code/matrix.c:20]   --->   Operation 106 'load' 'B_load_11' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 6 <SV = 5> <Delay = 2.15>
+ST_6 : Operation 107 [1/2] (2.15ns)   --->   "%B_load_11 = load i32* %B_addr_4, align 4" [code/matrix.c:20]   --->   Operation 107 'load' 'B_load_11' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%B_addr_5 = getelementptr [64 x i32]* %B, i64 0, i64 40" [code/matrix.c:20]   --->   Operation 108 'getelementptr' 'B_addr_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 109 [2/2] (2.15ns)   --->   "%B_load_12 = load i32* %B_addr_5, align 4" [code/matrix.c:20]   --->   Operation 109 'load' 'B_load_12' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 7 <SV = 6> <Delay = 2.15>
+ST_7 : Operation 110 [1/2] (2.15ns)   --->   "%B_load_12 = load i32* %B_addr_5, align 4" [code/matrix.c:20]   --->   Operation 110 'load' 'B_load_12' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%B_addr_6 = getelementptr [64 x i32]* %B, i64 0, i64 48" [code/matrix.c:20]   --->   Operation 111 'getelementptr' 'B_addr_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 112 [2/2] (2.15ns)   --->   "%B_load_13 = load i32* %B_addr_6, align 4" [code/matrix.c:20]   --->   Operation 112 'load' 'B_load_13' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 8 <SV = 7> <Delay = 2.15>
+ST_8 : Operation 113 [1/2] (2.15ns)   --->   "%B_load_13 = load i32* %B_addr_6, align 4" [code/matrix.c:20]   --->   Operation 113 'load' 'B_load_13' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_8 : Operation 114 [1/1] (0.00ns)   --->   "%B_addr_7 = getelementptr [64 x i32]* %B, i64 0, i64 56" [code/matrix.c:20]   --->   Operation 114 'getelementptr' 'B_addr_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 115 [2/2] (2.15ns)   --->   "%B_load_14 = load i32* %B_addr_7, align 4" [code/matrix.c:20]   --->   Operation 115 'load' 'B_load_14' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 9 <SV = 8> <Delay = 2.15>
+ST_9 : Operation 116 [1/2] (2.15ns)   --->   "%B_load_14 = load i32* %B_addr_7, align 4" [code/matrix.c:20]   --->   Operation 116 'load' 'B_load_14' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%B_addr_8 = getelementptr [64 x i32]* %B, i64 0, i64 1" [code/matrix.c:20]   --->   Operation 117 'getelementptr' 'B_addr_8' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 118 [2/2] (2.15ns)   --->   "%B_load_15 = load i32* %B_addr_8, align 4" [code/matrix.c:20]   --->   Operation 118 'load' 'B_load_15' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 10 <SV = 9> <Delay = 2.15>
+ST_10 : Operation 119 [1/2] (2.15ns)   --->   "%B_load_15 = load i32* %B_addr_8, align 4" [code/matrix.c:20]   --->   Operation 119 'load' 'B_load_15' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_10 : Operation 120 [1/1] (0.00ns)   --->   "%B_addr_9 = getelementptr [64 x i32]* %B, i64 0, i64 9" [code/matrix.c:20]   --->   Operation 120 'getelementptr' 'B_addr_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 121 [2/2] (2.15ns)   --->   "%B_load_16 = load i32* %B_addr_9, align 4" [code/matrix.c:20]   --->   Operation 121 'load' 'B_load_16' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 11 <SV = 10> <Delay = 2.15>
+ST_11 : Operation 122 [1/2] (2.15ns)   --->   "%B_load_16 = load i32* %B_addr_9, align 4" [code/matrix.c:20]   --->   Operation 122 'load' 'B_load_16' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_11 : Operation 123 [1/1] (0.00ns)   --->   "%B_addr_10 = getelementptr [64 x i32]* %B, i64 0, i64 17" [code/matrix.c:20]   --->   Operation 123 'getelementptr' 'B_addr_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 124 [2/2] (2.15ns)   --->   "%B_load_17 = load i32* %B_addr_10, align 4" [code/matrix.c:20]   --->   Operation 124 'load' 'B_load_17' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 12 <SV = 11> <Delay = 2.15>
+ST_12 : Operation 125 [1/2] (2.15ns)   --->   "%B_load_17 = load i32* %B_addr_10, align 4" [code/matrix.c:20]   --->   Operation 125 'load' 'B_load_17' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_12 : Operation 126 [1/1] (0.00ns)   --->   "%B_addr_11 = getelementptr [64 x i32]* %B, i64 0, i64 25" [code/matrix.c:20]   --->   Operation 126 'getelementptr' 'B_addr_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 127 [2/2] (2.15ns)   --->   "%B_load_18 = load i32* %B_addr_11, align 4" [code/matrix.c:20]   --->   Operation 127 'load' 'B_load_18' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 13 <SV = 12> <Delay = 2.15>
+ST_13 : Operation 128 [1/2] (2.15ns)   --->   "%B_load_18 = load i32* %B_addr_11, align 4" [code/matrix.c:20]   --->   Operation 128 'load' 'B_load_18' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_13 : Operation 129 [1/1] (0.00ns)   --->   "%B_addr_12 = getelementptr [64 x i32]* %B, i64 0, i64 33" [code/matrix.c:20]   --->   Operation 129 'getelementptr' 'B_addr_12' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 130 [2/2] (2.15ns)   --->   "%B_load_19 = load i32* %B_addr_12, align 4" [code/matrix.c:20]   --->   Operation 130 'load' 'B_load_19' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 14 <SV = 13> <Delay = 2.15>
+ST_14 : Operation 131 [1/2] (2.15ns)   --->   "%B_load_19 = load i32* %B_addr_12, align 4" [code/matrix.c:20]   --->   Operation 131 'load' 'B_load_19' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_14 : Operation 132 [1/1] (0.00ns)   --->   "%B_addr_13 = getelementptr [64 x i32]* %B, i64 0, i64 41" [code/matrix.c:20]   --->   Operation 132 'getelementptr' 'B_addr_13' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 133 [2/2] (2.15ns)   --->   "%B_load_20 = load i32* %B_addr_13, align 4" [code/matrix.c:20]   --->   Operation 133 'load' 'B_load_20' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 15 <SV = 14> <Delay = 2.15>
+ST_15 : Operation 134 [1/2] (2.15ns)   --->   "%B_load_20 = load i32* %B_addr_13, align 4" [code/matrix.c:20]   --->   Operation 134 'load' 'B_load_20' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_15 : Operation 135 [1/1] (0.00ns)   --->   "%B_addr_14 = getelementptr [64 x i32]* %B, i64 0, i64 49" [code/matrix.c:20]   --->   Operation 135 'getelementptr' 'B_addr_14' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 136 [2/2] (2.15ns)   --->   "%B_load_21 = load i32* %B_addr_14, align 4" [code/matrix.c:20]   --->   Operation 136 'load' 'B_load_21' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 16 <SV = 15> <Delay = 2.15>
+ST_16 : Operation 137 [1/2] (2.15ns)   --->   "%B_load_21 = load i32* %B_addr_14, align 4" [code/matrix.c:20]   --->   Operation 137 'load' 'B_load_21' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_16 : Operation 138 [1/1] (0.00ns)   --->   "%B_addr_15 = getelementptr [64 x i32]* %B, i64 0, i64 57" [code/matrix.c:20]   --->   Operation 138 'getelementptr' 'B_addr_15' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 139 [2/2] (2.15ns)   --->   "%B_load_22 = load i32* %B_addr_15, align 4" [code/matrix.c:20]   --->   Operation 139 'load' 'B_load_22' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 17 <SV = 16> <Delay = 2.15>
+ST_17 : Operation 140 [1/2] (2.15ns)   --->   "%B_load_22 = load i32* %B_addr_15, align 4" [code/matrix.c:20]   --->   Operation 140 'load' 'B_load_22' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_17 : Operation 141 [1/1] (0.00ns)   --->   "%B_addr_16 = getelementptr [64 x i32]* %B, i64 0, i64 2" [code/matrix.c:20]   --->   Operation 141 'getelementptr' 'B_addr_16' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 142 [2/2] (2.15ns)   --->   "%B_load_23 = load i32* %B_addr_16, align 4" [code/matrix.c:20]   --->   Operation 142 'load' 'B_load_23' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 18 <SV = 17> <Delay = 2.15>
+ST_18 : Operation 143 [1/2] (2.15ns)   --->   "%B_load_23 = load i32* %B_addr_16, align 4" [code/matrix.c:20]   --->   Operation 143 'load' 'B_load_23' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_18 : Operation 144 [1/1] (0.00ns)   --->   "%B_addr_17 = getelementptr [64 x i32]* %B, i64 0, i64 10" [code/matrix.c:20]   --->   Operation 144 'getelementptr' 'B_addr_17' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 145 [2/2] (2.15ns)   --->   "%B_load_24 = load i32* %B_addr_17, align 4" [code/matrix.c:20]   --->   Operation 145 'load' 'B_load_24' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 19 <SV = 18> <Delay = 2.15>
+ST_19 : Operation 146 [1/2] (2.15ns)   --->   "%B_load_24 = load i32* %B_addr_17, align 4" [code/matrix.c:20]   --->   Operation 146 'load' 'B_load_24' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_19 : Operation 147 [1/1] (0.00ns)   --->   "%B_addr_18 = getelementptr [64 x i32]* %B, i64 0, i64 18" [code/matrix.c:20]   --->   Operation 147 'getelementptr' 'B_addr_18' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 148 [2/2] (2.15ns)   --->   "%B_load_25 = load i32* %B_addr_18, align 4" [code/matrix.c:20]   --->   Operation 148 'load' 'B_load_25' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 20 <SV = 19> <Delay = 2.15>
+ST_20 : Operation 149 [1/2] (2.15ns)   --->   "%B_load_25 = load i32* %B_addr_18, align 4" [code/matrix.c:20]   --->   Operation 149 'load' 'B_load_25' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_20 : Operation 150 [1/1] (0.00ns)   --->   "%B_addr_19 = getelementptr [64 x i32]* %B, i64 0, i64 26" [code/matrix.c:20]   --->   Operation 150 'getelementptr' 'B_addr_19' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 151 [2/2] (2.15ns)   --->   "%B_load_26 = load i32* %B_addr_19, align 4" [code/matrix.c:20]   --->   Operation 151 'load' 'B_load_26' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 21 <SV = 20> <Delay = 2.15>
+ST_21 : Operation 152 [1/2] (2.15ns)   --->   "%B_load_26 = load i32* %B_addr_19, align 4" [code/matrix.c:20]   --->   Operation 152 'load' 'B_load_26' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_21 : Operation 153 [1/1] (0.00ns)   --->   "%B_addr_20 = getelementptr [64 x i32]* %B, i64 0, i64 34" [code/matrix.c:20]   --->   Operation 153 'getelementptr' 'B_addr_20' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 154 [2/2] (2.15ns)   --->   "%B_load_27 = load i32* %B_addr_20, align 4" [code/matrix.c:20]   --->   Operation 154 'load' 'B_load_27' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 22 <SV = 21> <Delay = 2.15>
+ST_22 : Operation 155 [1/2] (2.15ns)   --->   "%B_load_27 = load i32* %B_addr_20, align 4" [code/matrix.c:20]   --->   Operation 155 'load' 'B_load_27' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_22 : Operation 156 [1/1] (0.00ns)   --->   "%B_addr_21 = getelementptr [64 x i32]* %B, i64 0, i64 42" [code/matrix.c:20]   --->   Operation 156 'getelementptr' 'B_addr_21' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 157 [2/2] (2.15ns)   --->   "%B_load_28 = load i32* %B_addr_21, align 4" [code/matrix.c:20]   --->   Operation 157 'load' 'B_load_28' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 23 <SV = 22> <Delay = 2.15>
+ST_23 : Operation 158 [1/2] (2.15ns)   --->   "%B_load_28 = load i32* %B_addr_21, align 4" [code/matrix.c:20]   --->   Operation 158 'load' 'B_load_28' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_23 : Operation 159 [1/1] (0.00ns)   --->   "%B_addr_22 = getelementptr [64 x i32]* %B, i64 0, i64 50" [code/matrix.c:20]   --->   Operation 159 'getelementptr' 'B_addr_22' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 160 [2/2] (2.15ns)   --->   "%B_load_29 = load i32* %B_addr_22, align 4" [code/matrix.c:20]   --->   Operation 160 'load' 'B_load_29' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 24 <SV = 23> <Delay = 2.15>
+ST_24 : Operation 161 [1/2] (2.15ns)   --->   "%B_load_29 = load i32* %B_addr_22, align 4" [code/matrix.c:20]   --->   Operation 161 'load' 'B_load_29' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_24 : Operation 162 [1/1] (0.00ns)   --->   "%B_addr_23 = getelementptr [64 x i32]* %B, i64 0, i64 58" [code/matrix.c:20]   --->   Operation 162 'getelementptr' 'B_addr_23' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 163 [2/2] (2.15ns)   --->   "%B_load_30 = load i32* %B_addr_23, align 4" [code/matrix.c:20]   --->   Operation 163 'load' 'B_load_30' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 25 <SV = 24> <Delay = 2.15>
+ST_25 : Operation 164 [1/2] (2.15ns)   --->   "%B_load_30 = load i32* %B_addr_23, align 4" [code/matrix.c:20]   --->   Operation 164 'load' 'B_load_30' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_25 : Operation 165 [1/1] (0.00ns)   --->   "%B_addr_24 = getelementptr [64 x i32]* %B, i64 0, i64 3" [code/matrix.c:20]   --->   Operation 165 'getelementptr' 'B_addr_24' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 166 [2/2] (2.15ns)   --->   "%B_load_31 = load i32* %B_addr_24, align 4" [code/matrix.c:20]   --->   Operation 166 'load' 'B_load_31' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 26 <SV = 25> <Delay = 2.15>
+ST_26 : Operation 167 [1/2] (2.15ns)   --->   "%B_load_31 = load i32* %B_addr_24, align 4" [code/matrix.c:20]   --->   Operation 167 'load' 'B_load_31' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_26 : Operation 168 [1/1] (0.00ns)   --->   "%B_addr_25 = getelementptr [64 x i32]* %B, i64 0, i64 11" [code/matrix.c:20]   --->   Operation 168 'getelementptr' 'B_addr_25' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 169 [2/2] (2.15ns)   --->   "%B_load_32 = load i32* %B_addr_25, align 4" [code/matrix.c:20]   --->   Operation 169 'load' 'B_load_32' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 27 <SV = 26> <Delay = 2.15>
+ST_27 : Operation 170 [1/2] (2.15ns)   --->   "%B_load_32 = load i32* %B_addr_25, align 4" [code/matrix.c:20]   --->   Operation 170 'load' 'B_load_32' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_27 : Operation 171 [1/1] (0.00ns)   --->   "%B_addr_26 = getelementptr [64 x i32]* %B, i64 0, i64 19" [code/matrix.c:20]   --->   Operation 171 'getelementptr' 'B_addr_26' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 172 [2/2] (2.15ns)   --->   "%B_load_33 = load i32* %B_addr_26, align 4" [code/matrix.c:20]   --->   Operation 172 'load' 'B_load_33' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 28 <SV = 27> <Delay = 2.15>
+ST_28 : Operation 173 [1/2] (2.15ns)   --->   "%B_load_33 = load i32* %B_addr_26, align 4" [code/matrix.c:20]   --->   Operation 173 'load' 'B_load_33' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_28 : Operation 174 [1/1] (0.00ns)   --->   "%B_addr_27 = getelementptr [64 x i32]* %B, i64 0, i64 27" [code/matrix.c:20]   --->   Operation 174 'getelementptr' 'B_addr_27' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 175 [2/2] (2.15ns)   --->   "%B_load_34 = load i32* %B_addr_27, align 4" [code/matrix.c:20]   --->   Operation 175 'load' 'B_load_34' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 29 <SV = 28> <Delay = 2.15>
+ST_29 : Operation 176 [1/2] (2.15ns)   --->   "%B_load_34 = load i32* %B_addr_27, align 4" [code/matrix.c:20]   --->   Operation 176 'load' 'B_load_34' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_29 : Operation 177 [1/1] (0.00ns)   --->   "%B_addr_28 = getelementptr [64 x i32]* %B, i64 0, i64 35" [code/matrix.c:20]   --->   Operation 177 'getelementptr' 'B_addr_28' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 178 [2/2] (2.15ns)   --->   "%B_load_35 = load i32* %B_addr_28, align 4" [code/matrix.c:20]   --->   Operation 178 'load' 'B_load_35' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 30 <SV = 29> <Delay = 2.15>
+ST_30 : Operation 179 [1/2] (2.15ns)   --->   "%B_load_35 = load i32* %B_addr_28, align 4" [code/matrix.c:20]   --->   Operation 179 'load' 'B_load_35' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_30 : Operation 180 [1/1] (0.00ns)   --->   "%B_addr_29 = getelementptr [64 x i32]* %B, i64 0, i64 43" [code/matrix.c:20]   --->   Operation 180 'getelementptr' 'B_addr_29' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 181 [2/2] (2.15ns)   --->   "%B_load_36 = load i32* %B_addr_29, align 4" [code/matrix.c:20]   --->   Operation 181 'load' 'B_load_36' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 31 <SV = 30> <Delay = 2.15>
+ST_31 : Operation 182 [1/2] (2.15ns)   --->   "%B_load_36 = load i32* %B_addr_29, align 4" [code/matrix.c:20]   --->   Operation 182 'load' 'B_load_36' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_31 : Operation 183 [1/1] (0.00ns)   --->   "%B_addr_30 = getelementptr [64 x i32]* %B, i64 0, i64 51" [code/matrix.c:20]   --->   Operation 183 'getelementptr' 'B_addr_30' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 184 [2/2] (2.15ns)   --->   "%B_load_37 = load i32* %B_addr_30, align 4" [code/matrix.c:20]   --->   Operation 184 'load' 'B_load_37' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 32 <SV = 31> <Delay = 2.15>
+ST_32 : Operation 185 [1/2] (2.15ns)   --->   "%B_load_37 = load i32* %B_addr_30, align 4" [code/matrix.c:20]   --->   Operation 185 'load' 'B_load_37' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_32 : Operation 186 [1/1] (0.00ns)   --->   "%B_addr_31 = getelementptr [64 x i32]* %B, i64 0, i64 59" [code/matrix.c:20]   --->   Operation 186 'getelementptr' 'B_addr_31' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 187 [2/2] (2.15ns)   --->   "%B_load_38 = load i32* %B_addr_31, align 4" [code/matrix.c:20]   --->   Operation 187 'load' 'B_load_38' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 33 <SV = 32> <Delay = 2.15>
+ST_33 : Operation 188 [1/2] (2.15ns)   --->   "%B_load_38 = load i32* %B_addr_31, align 4" [code/matrix.c:20]   --->   Operation 188 'load' 'B_load_38' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_33 : Operation 189 [1/1] (0.00ns)   --->   "%B_addr_32 = getelementptr [64 x i32]* %B, i64 0, i64 4" [code/matrix.c:20]   --->   Operation 189 'getelementptr' 'B_addr_32' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 190 [2/2] (2.15ns)   --->   "%B_load_39 = load i32* %B_addr_32, align 4" [code/matrix.c:20]   --->   Operation 190 'load' 'B_load_39' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 34 <SV = 33> <Delay = 2.15>
+ST_34 : Operation 191 [1/2] (2.15ns)   --->   "%B_load_39 = load i32* %B_addr_32, align 4" [code/matrix.c:20]   --->   Operation 191 'load' 'B_load_39' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_34 : Operation 192 [1/1] (0.00ns)   --->   "%B_addr_33 = getelementptr [64 x i32]* %B, i64 0, i64 12" [code/matrix.c:20]   --->   Operation 192 'getelementptr' 'B_addr_33' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 193 [2/2] (2.15ns)   --->   "%B_load_40 = load i32* %B_addr_33, align 4" [code/matrix.c:20]   --->   Operation 193 'load' 'B_load_40' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 35 <SV = 34> <Delay = 2.15>
+ST_35 : Operation 194 [1/2] (2.15ns)   --->   "%B_load_40 = load i32* %B_addr_33, align 4" [code/matrix.c:20]   --->   Operation 194 'load' 'B_load_40' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_35 : Operation 195 [1/1] (0.00ns)   --->   "%B_addr_34 = getelementptr [64 x i32]* %B, i64 0, i64 20" [code/matrix.c:20]   --->   Operation 195 'getelementptr' 'B_addr_34' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 196 [2/2] (2.15ns)   --->   "%B_load_41 = load i32* %B_addr_34, align 4" [code/matrix.c:20]   --->   Operation 196 'load' 'B_load_41' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 36 <SV = 35> <Delay = 2.15>
+ST_36 : Operation 197 [1/2] (2.15ns)   --->   "%B_load_41 = load i32* %B_addr_34, align 4" [code/matrix.c:20]   --->   Operation 197 'load' 'B_load_41' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_36 : Operation 198 [1/1] (0.00ns)   --->   "%B_addr_35 = getelementptr [64 x i32]* %B, i64 0, i64 28" [code/matrix.c:20]   --->   Operation 198 'getelementptr' 'B_addr_35' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 199 [2/2] (2.15ns)   --->   "%B_load_42 = load i32* %B_addr_35, align 4" [code/matrix.c:20]   --->   Operation 199 'load' 'B_load_42' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 37 <SV = 36> <Delay = 2.15>
+ST_37 : Operation 200 [1/2] (2.15ns)   --->   "%B_load_42 = load i32* %B_addr_35, align 4" [code/matrix.c:20]   --->   Operation 200 'load' 'B_load_42' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_37 : Operation 201 [1/1] (0.00ns)   --->   "%B_addr_36 = getelementptr [64 x i32]* %B, i64 0, i64 36" [code/matrix.c:20]   --->   Operation 201 'getelementptr' 'B_addr_36' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 202 [2/2] (2.15ns)   --->   "%B_load_43 = load i32* %B_addr_36, align 4" [code/matrix.c:20]   --->   Operation 202 'load' 'B_load_43' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 38 <SV = 37> <Delay = 2.15>
+ST_38 : Operation 203 [1/2] (2.15ns)   --->   "%B_load_43 = load i32* %B_addr_36, align 4" [code/matrix.c:20]   --->   Operation 203 'load' 'B_load_43' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_38 : Operation 204 [1/1] (0.00ns)   --->   "%B_addr_37 = getelementptr [64 x i32]* %B, i64 0, i64 44" [code/matrix.c:20]   --->   Operation 204 'getelementptr' 'B_addr_37' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 205 [2/2] (2.15ns)   --->   "%B_load_44 = load i32* %B_addr_37, align 4" [code/matrix.c:20]   --->   Operation 205 'load' 'B_load_44' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 39 <SV = 38> <Delay = 2.15>
+ST_39 : Operation 206 [1/2] (2.15ns)   --->   "%B_load_44 = load i32* %B_addr_37, align 4" [code/matrix.c:20]   --->   Operation 206 'load' 'B_load_44' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_39 : Operation 207 [1/1] (0.00ns)   --->   "%B_addr_38 = getelementptr [64 x i32]* %B, i64 0, i64 52" [code/matrix.c:20]   --->   Operation 207 'getelementptr' 'B_addr_38' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 208 [2/2] (2.15ns)   --->   "%B_load_45 = load i32* %B_addr_38, align 4" [code/matrix.c:20]   --->   Operation 208 'load' 'B_load_45' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 40 <SV = 39> <Delay = 2.15>
+ST_40 : Operation 209 [1/2] (2.15ns)   --->   "%B_load_45 = load i32* %B_addr_38, align 4" [code/matrix.c:20]   --->   Operation 209 'load' 'B_load_45' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_40 : Operation 210 [1/1] (0.00ns)   --->   "%B_addr_39 = getelementptr [64 x i32]* %B, i64 0, i64 60" [code/matrix.c:20]   --->   Operation 210 'getelementptr' 'B_addr_39' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 211 [2/2] (2.15ns)   --->   "%B_load_46 = load i32* %B_addr_39, align 4" [code/matrix.c:20]   --->   Operation 211 'load' 'B_load_46' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 41 <SV = 40> <Delay = 2.15>
+ST_41 : Operation 212 [1/2] (2.15ns)   --->   "%B_load_46 = load i32* %B_addr_39, align 4" [code/matrix.c:20]   --->   Operation 212 'load' 'B_load_46' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_41 : Operation 213 [1/1] (0.00ns)   --->   "%B_addr_40 = getelementptr [64 x i32]* %B, i64 0, i64 5" [code/matrix.c:20]   --->   Operation 213 'getelementptr' 'B_addr_40' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 214 [2/2] (2.15ns)   --->   "%B_load_47 = load i32* %B_addr_40, align 4" [code/matrix.c:20]   --->   Operation 214 'load' 'B_load_47' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 42 <SV = 41> <Delay = 2.15>
+ST_42 : Operation 215 [1/2] (2.15ns)   --->   "%B_load_47 = load i32* %B_addr_40, align 4" [code/matrix.c:20]   --->   Operation 215 'load' 'B_load_47' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_42 : Operation 216 [1/1] (0.00ns)   --->   "%B_addr_41 = getelementptr [64 x i32]* %B, i64 0, i64 13" [code/matrix.c:20]   --->   Operation 216 'getelementptr' 'B_addr_41' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 217 [2/2] (2.15ns)   --->   "%B_load_48 = load i32* %B_addr_41, align 4" [code/matrix.c:20]   --->   Operation 217 'load' 'B_load_48' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 43 <SV = 42> <Delay = 2.15>
+ST_43 : Operation 218 [1/2] (2.15ns)   --->   "%B_load_48 = load i32* %B_addr_41, align 4" [code/matrix.c:20]   --->   Operation 218 'load' 'B_load_48' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_43 : Operation 219 [1/1] (0.00ns)   --->   "%B_addr_42 = getelementptr [64 x i32]* %B, i64 0, i64 21" [code/matrix.c:20]   --->   Operation 219 'getelementptr' 'B_addr_42' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 220 [2/2] (2.15ns)   --->   "%B_load_49 = load i32* %B_addr_42, align 4" [code/matrix.c:20]   --->   Operation 220 'load' 'B_load_49' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 44 <SV = 43> <Delay = 2.15>
+ST_44 : Operation 221 [1/2] (2.15ns)   --->   "%B_load_49 = load i32* %B_addr_42, align 4" [code/matrix.c:20]   --->   Operation 221 'load' 'B_load_49' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_44 : Operation 222 [1/1] (0.00ns)   --->   "%B_addr_43 = getelementptr [64 x i32]* %B, i64 0, i64 29" [code/matrix.c:20]   --->   Operation 222 'getelementptr' 'B_addr_43' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 223 [2/2] (2.15ns)   --->   "%B_load_50 = load i32* %B_addr_43, align 4" [code/matrix.c:20]   --->   Operation 223 'load' 'B_load_50' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 45 <SV = 44> <Delay = 2.15>
+ST_45 : Operation 224 [1/2] (2.15ns)   --->   "%B_load_50 = load i32* %B_addr_43, align 4" [code/matrix.c:20]   --->   Operation 224 'load' 'B_load_50' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_45 : Operation 225 [1/1] (0.00ns)   --->   "%B_addr_44 = getelementptr [64 x i32]* %B, i64 0, i64 37" [code/matrix.c:20]   --->   Operation 225 'getelementptr' 'B_addr_44' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 226 [2/2] (2.15ns)   --->   "%B_load_51 = load i32* %B_addr_44, align 4" [code/matrix.c:20]   --->   Operation 226 'load' 'B_load_51' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 46 <SV = 45> <Delay = 2.15>
+ST_46 : Operation 227 [1/2] (2.15ns)   --->   "%B_load_51 = load i32* %B_addr_44, align 4" [code/matrix.c:20]   --->   Operation 227 'load' 'B_load_51' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_46 : Operation 228 [1/1] (0.00ns)   --->   "%B_addr_45 = getelementptr [64 x i32]* %B, i64 0, i64 45" [code/matrix.c:20]   --->   Operation 228 'getelementptr' 'B_addr_45' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 229 [2/2] (2.15ns)   --->   "%B_load_52 = load i32* %B_addr_45, align 4" [code/matrix.c:20]   --->   Operation 229 'load' 'B_load_52' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 47 <SV = 46> <Delay = 2.15>
+ST_47 : Operation 230 [1/2] (2.15ns)   --->   "%B_load_52 = load i32* %B_addr_45, align 4" [code/matrix.c:20]   --->   Operation 230 'load' 'B_load_52' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_47 : Operation 231 [1/1] (0.00ns)   --->   "%B_addr_46 = getelementptr [64 x i32]* %B, i64 0, i64 53" [code/matrix.c:20]   --->   Operation 231 'getelementptr' 'B_addr_46' <Predicate = true> <Delay = 0.00>
+ST_47 : Operation 232 [2/2] (2.15ns)   --->   "%B_load_53 = load i32* %B_addr_46, align 4" [code/matrix.c:20]   --->   Operation 232 'load' 'B_load_53' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 48 <SV = 47> <Delay = 2.15>
+ST_48 : Operation 233 [1/2] (2.15ns)   --->   "%B_load_53 = load i32* %B_addr_46, align 4" [code/matrix.c:20]   --->   Operation 233 'load' 'B_load_53' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_48 : Operation 234 [1/1] (0.00ns)   --->   "%B_addr_47 = getelementptr [64 x i32]* %B, i64 0, i64 61" [code/matrix.c:20]   --->   Operation 234 'getelementptr' 'B_addr_47' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 235 [2/2] (2.15ns)   --->   "%B_load_54 = load i32* %B_addr_47, align 4" [code/matrix.c:20]   --->   Operation 235 'load' 'B_load_54' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 49 <SV = 48> <Delay = 2.15>
+ST_49 : Operation 236 [1/2] (2.15ns)   --->   "%B_load_54 = load i32* %B_addr_47, align 4" [code/matrix.c:20]   --->   Operation 236 'load' 'B_load_54' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_49 : Operation 237 [1/1] (0.00ns)   --->   "%B_addr_48 = getelementptr [64 x i32]* %B, i64 0, i64 6" [code/matrix.c:20]   --->   Operation 237 'getelementptr' 'B_addr_48' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 238 [2/2] (2.15ns)   --->   "%B_load_55 = load i32* %B_addr_48, align 4" [code/matrix.c:20]   --->   Operation 238 'load' 'B_load_55' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 50 <SV = 49> <Delay = 2.15>
+ST_50 : Operation 239 [1/2] (2.15ns)   --->   "%B_load_55 = load i32* %B_addr_48, align 4" [code/matrix.c:20]   --->   Operation 239 'load' 'B_load_55' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_50 : Operation 240 [1/1] (0.00ns)   --->   "%B_addr_49 = getelementptr [64 x i32]* %B, i64 0, i64 14" [code/matrix.c:20]   --->   Operation 240 'getelementptr' 'B_addr_49' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 241 [2/2] (2.15ns)   --->   "%B_load_56 = load i32* %B_addr_49, align 4" [code/matrix.c:20]   --->   Operation 241 'load' 'B_load_56' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 51 <SV = 50> <Delay = 2.15>
+ST_51 : Operation 242 [1/2] (2.15ns)   --->   "%B_load_56 = load i32* %B_addr_49, align 4" [code/matrix.c:20]   --->   Operation 242 'load' 'B_load_56' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_51 : Operation 243 [1/1] (0.00ns)   --->   "%B_addr_50 = getelementptr [64 x i32]* %B, i64 0, i64 22" [code/matrix.c:20]   --->   Operation 243 'getelementptr' 'B_addr_50' <Predicate = true> <Delay = 0.00>
+ST_51 : Operation 244 [2/2] (2.15ns)   --->   "%B_load_57 = load i32* %B_addr_50, align 4" [code/matrix.c:20]   --->   Operation 244 'load' 'B_load_57' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 52 <SV = 51> <Delay = 2.15>
+ST_52 : Operation 245 [1/2] (2.15ns)   --->   "%B_load_57 = load i32* %B_addr_50, align 4" [code/matrix.c:20]   --->   Operation 245 'load' 'B_load_57' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_52 : Operation 246 [1/1] (0.00ns)   --->   "%B_addr_51 = getelementptr [64 x i32]* %B, i64 0, i64 30" [code/matrix.c:20]   --->   Operation 246 'getelementptr' 'B_addr_51' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 247 [2/2] (2.15ns)   --->   "%B_load_58 = load i32* %B_addr_51, align 4" [code/matrix.c:20]   --->   Operation 247 'load' 'B_load_58' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 53 <SV = 52> <Delay = 2.15>
+ST_53 : Operation 248 [1/2] (2.15ns)   --->   "%B_load_58 = load i32* %B_addr_51, align 4" [code/matrix.c:20]   --->   Operation 248 'load' 'B_load_58' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_53 : Operation 249 [1/1] (0.00ns)   --->   "%B_addr_52 = getelementptr [64 x i32]* %B, i64 0, i64 38" [code/matrix.c:20]   --->   Operation 249 'getelementptr' 'B_addr_52' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 250 [2/2] (2.15ns)   --->   "%B_load_59 = load i32* %B_addr_52, align 4" [code/matrix.c:20]   --->   Operation 250 'load' 'B_load_59' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 54 <SV = 53> <Delay = 2.15>
+ST_54 : Operation 251 [1/2] (2.15ns)   --->   "%B_load_59 = load i32* %B_addr_52, align 4" [code/matrix.c:20]   --->   Operation 251 'load' 'B_load_59' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_54 : Operation 252 [1/1] (0.00ns)   --->   "%B_addr_53 = getelementptr [64 x i32]* %B, i64 0, i64 46" [code/matrix.c:20]   --->   Operation 252 'getelementptr' 'B_addr_53' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 253 [2/2] (2.15ns)   --->   "%B_load_60 = load i32* %B_addr_53, align 4" [code/matrix.c:20]   --->   Operation 253 'load' 'B_load_60' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 55 <SV = 54> <Delay = 2.15>
+ST_55 : Operation 254 [1/2] (2.15ns)   --->   "%B_load_60 = load i32* %B_addr_53, align 4" [code/matrix.c:20]   --->   Operation 254 'load' 'B_load_60' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_55 : Operation 255 [1/1] (0.00ns)   --->   "%B_addr_54 = getelementptr [64 x i32]* %B, i64 0, i64 54" [code/matrix.c:20]   --->   Operation 255 'getelementptr' 'B_addr_54' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 256 [2/2] (2.15ns)   --->   "%B_load_61 = load i32* %B_addr_54, align 4" [code/matrix.c:20]   --->   Operation 256 'load' 'B_load_61' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 56 <SV = 55> <Delay = 2.15>
+ST_56 : Operation 257 [1/2] (2.15ns)   --->   "%B_load_61 = load i32* %B_addr_54, align 4" [code/matrix.c:20]   --->   Operation 257 'load' 'B_load_61' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_56 : Operation 258 [1/1] (0.00ns)   --->   "%B_addr_55 = getelementptr [64 x i32]* %B, i64 0, i64 62" [code/matrix.c:20]   --->   Operation 258 'getelementptr' 'B_addr_55' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 259 [2/2] (2.15ns)   --->   "%B_load_62 = load i32* %B_addr_55, align 4" [code/matrix.c:20]   --->   Operation 259 'load' 'B_load_62' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 57 <SV = 56> <Delay = 2.15>
+ST_57 : Operation 260 [1/2] (2.15ns)   --->   "%B_load_62 = load i32* %B_addr_55, align 4" [code/matrix.c:20]   --->   Operation 260 'load' 'B_load_62' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_57 : Operation 261 [1/1] (0.00ns)   --->   "%B_addr_56 = getelementptr [64 x i32]* %B, i64 0, i64 7" [code/matrix.c:20]   --->   Operation 261 'getelementptr' 'B_addr_56' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 262 [2/2] (2.15ns)   --->   "%B_load_63 = load i32* %B_addr_56, align 4" [code/matrix.c:20]   --->   Operation 262 'load' 'B_load_63' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 58 <SV = 57> <Delay = 2.15>
+ST_58 : Operation 263 [1/2] (2.15ns)   --->   "%B_load_63 = load i32* %B_addr_56, align 4" [code/matrix.c:20]   --->   Operation 263 'load' 'B_load_63' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_58 : Operation 264 [1/1] (0.00ns)   --->   "%B_addr_57 = getelementptr [64 x i32]* %B, i64 0, i64 15" [code/matrix.c:20]   --->   Operation 264 'getelementptr' 'B_addr_57' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 265 [2/2] (2.15ns)   --->   "%B_load_64 = load i32* %B_addr_57, align 4" [code/matrix.c:20]   --->   Operation 265 'load' 'B_load_64' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 59 <SV = 58> <Delay = 2.15>
+ST_59 : Operation 266 [1/2] (2.15ns)   --->   "%B_load_64 = load i32* %B_addr_57, align 4" [code/matrix.c:20]   --->   Operation 266 'load' 'B_load_64' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_59 : Operation 267 [1/1] (0.00ns)   --->   "%B_addr_58 = getelementptr [64 x i32]* %B, i64 0, i64 23" [code/matrix.c:20]   --->   Operation 267 'getelementptr' 'B_addr_58' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 268 [2/2] (2.15ns)   --->   "%B_load_65 = load i32* %B_addr_58, align 4" [code/matrix.c:20]   --->   Operation 268 'load' 'B_load_65' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 60 <SV = 59> <Delay = 2.15>
+ST_60 : Operation 269 [1/2] (2.15ns)   --->   "%B_load_65 = load i32* %B_addr_58, align 4" [code/matrix.c:20]   --->   Operation 269 'load' 'B_load_65' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_60 : Operation 270 [1/1] (0.00ns)   --->   "%B_addr_59 = getelementptr [64 x i32]* %B, i64 0, i64 31" [code/matrix.c:20]   --->   Operation 270 'getelementptr' 'B_addr_59' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 271 [2/2] (2.15ns)   --->   "%B_load_66 = load i32* %B_addr_59, align 4" [code/matrix.c:20]   --->   Operation 271 'load' 'B_load_66' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 61 <SV = 60> <Delay = 2.15>
+ST_61 : Operation 272 [1/2] (2.15ns)   --->   "%B_load_66 = load i32* %B_addr_59, align 4" [code/matrix.c:20]   --->   Operation 272 'load' 'B_load_66' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_61 : Operation 273 [1/1] (0.00ns)   --->   "%B_addr_60 = getelementptr [64 x i32]* %B, i64 0, i64 39" [code/matrix.c:20]   --->   Operation 273 'getelementptr' 'B_addr_60' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 274 [2/2] (2.15ns)   --->   "%B_load_67 = load i32* %B_addr_60, align 4" [code/matrix.c:20]   --->   Operation 274 'load' 'B_load_67' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 62 <SV = 61> <Delay = 2.15>
+ST_62 : Operation 275 [1/2] (2.15ns)   --->   "%B_load_67 = load i32* %B_addr_60, align 4" [code/matrix.c:20]   --->   Operation 275 'load' 'B_load_67' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_62 : Operation 276 [1/1] (0.00ns)   --->   "%B_addr_61 = getelementptr [64 x i32]* %B, i64 0, i64 47" [code/matrix.c:20]   --->   Operation 276 'getelementptr' 'B_addr_61' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 277 [2/2] (2.15ns)   --->   "%B_load_68 = load i32* %B_addr_61, align 4" [code/matrix.c:20]   --->   Operation 277 'load' 'B_load_68' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 63 <SV = 62> <Delay = 2.15>
+ST_63 : Operation 278 [1/2] (2.15ns)   --->   "%B_load_68 = load i32* %B_addr_61, align 4" [code/matrix.c:20]   --->   Operation 278 'load' 'B_load_68' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_63 : Operation 279 [1/1] (0.00ns)   --->   "%B_addr_62 = getelementptr [64 x i32]* %B, i64 0, i64 55" [code/matrix.c:20]   --->   Operation 279 'getelementptr' 'B_addr_62' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 280 [2/2] (2.15ns)   --->   "%B_load_69 = load i32* %B_addr_62, align 4" [code/matrix.c:20]   --->   Operation 280 'load' 'B_load_69' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 64 <SV = 63> <Delay = 2.15>
+ST_64 : Operation 281 [1/2] (2.15ns)   --->   "%B_load_69 = load i32* %B_addr_62, align 4" [code/matrix.c:20]   --->   Operation 281 'load' 'B_load_69' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_64 : Operation 282 [1/1] (0.00ns)   --->   "%B_addr_63 = getelementptr [64 x i32]* %B, i64 0, i64 63" [code/matrix.c:20]   --->   Operation 282 'getelementptr' 'B_addr_63' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 283 [2/2] (2.15ns)   --->   "%B_load_70 = load i32* %B_addr_63, align 4" [code/matrix.c:20]   --->   Operation 283 'load' 'B_load_70' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 65 <SV = 64> <Delay = 2.15>
+ST_65 : Operation 284 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %A) nounwind, !map !7"   --->   Operation 284 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 285 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %B) nounwind, !map !13"   --->   Operation 285 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 286 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %result) nounwind, !map !17"   --->   Operation 286 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 287 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @calc_str) nounwind"   --->   Operation 287 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 288 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [code/matrix.c:8]   --->   Operation 288 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 289 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([64 x i32]* %A, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4) nounwind" [code/matrix.c:9]   --->   Operation 289 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 290 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %A, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [code/matrix.c:9]   --->   Operation 290 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 291 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecMemCore([64 x i32]* %B, [1 x i8]* @p_str5, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str5, i32 -1, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5) nounwind" [code/matrix.c:10]   --->   Operation 291 'specmemcore' 'empty_3' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 292 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %B, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [code/matrix.c:10]   --->   Operation 292 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 293 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecMemCore([64 x i32]* %result, [1 x i8]* @p_str6, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str6, i32 -1, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6) nounwind" [code/matrix.c:11]   --->   Operation 293 'specmemcore' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 294 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %result, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [code/matrix.c:11]   --->   Operation 294 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 295 [1/2] (2.15ns)   --->   "%B_load_70 = load i32* %B_addr_63, align 4" [code/matrix.c:20]   --->   Operation 295 'load' 'B_load_70' <Predicate = true> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_65 : Operation 296 [1/1] (1.66ns)   --->   "br label %1" [code/matrix.c:15]   --->   Operation 296 'br' <Predicate = true> <Delay = 1.66>
+
+State 66 <SV = 65> <Delay = 2.15>
+ST_66 : Operation 297 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %hls_label_0 ]"   --->   Operation 297 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 298 [1/1] (1.44ns)   --->   "%icmp_ln15 = icmp eq i4 %i_0, -8" [code/matrix.c:15]   --->   Operation 298 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 299 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind"   --->   Operation 299 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 300 [1/1] (1.77ns)   --->   "%i = add i4 %i_0, 1" [code/matrix.c:15]   --->   Operation 300 'add' 'i' <Predicate = true> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 301 [1/1] (0.00ns)   --->   "br i1 %icmp_ln15, label %.preheader.preheader, label %hls_label_0" [code/matrix.c:15]   --->   Operation 301 'br' <Predicate = true> <Delay = 0.00>
+ST_66 : Operation 302 [1/1] (0.00ns)   --->   "%trunc_ln20 = trunc i4 %i_0 to i3" [code/matrix.c:20]   --->   Operation 302 'trunc' 'trunc_ln20' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_66 : Operation 303 [1/1] (0.00ns)   --->   "%shl_ln = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %trunc_ln20, i3 0)" [code/matrix.c:20]   --->   Operation 303 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_66 : Operation 304 [1/1] (0.00ns)   --->   "%zext_ln20 = zext i6 %shl_ln to i64" [code/matrix.c:20]   --->   Operation 304 'zext' 'zext_ln20' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_66 : Operation 305 [1/1] (0.00ns)   --->   "%A_addr = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20" [code/matrix.c:20]   --->   Operation 305 'getelementptr' 'A_addr' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_66 : Operation 306 [2/2] (2.15ns)   --->   "%A_load = load i32* %A_addr, align 4" [code/matrix.c:20]   --->   Operation 306 'load' 'A_load' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 67 <SV = 66> <Delay = 2.15>
+ST_67 : Operation 307 [1/2] (2.15ns)   --->   "%A_load = load i32* %A_addr, align 4" [code/matrix.c:20]   --->   Operation 307 'load' 'A_load' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_67 : Operation 308 [1/1] (0.00ns)   --->   "%or_ln20 = or i6 %shl_ln, 1" [code/matrix.c:20]   --->   Operation 308 'or' 'or_ln20' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_67 : Operation 309 [1/1] (0.00ns)   --->   "%zext_ln20_1 = zext i6 %or_ln20 to i64" [code/matrix.c:20]   --->   Operation 309 'zext' 'zext_ln20_1' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_67 : Operation 310 [1/1] (0.00ns)   --->   "%A_addr_1 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_1" [code/matrix.c:20]   --->   Operation 310 'getelementptr' 'A_addr_1' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_67 : Operation 311 [2/2] (2.15ns)   --->   "%A_load_1 = load i32* %A_addr_1, align 4" [code/matrix.c:20]   --->   Operation 311 'load' 'A_load_1' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 68 <SV = 67> <Delay = 8.47>
+ST_68 : Operation 312 [1/1] (8.47ns)   --->   "%mul_ln20 = mul nsw i32 %B_load, %A_load" [code/matrix.c:20]   --->   Operation 312 'mul' 'mul_ln20' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 313 [1/2] (2.15ns)   --->   "%A_load_1 = load i32* %A_addr_1, align 4" [code/matrix.c:20]   --->   Operation 313 'load' 'A_load_1' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_68 : Operation 314 [1/1] (0.00ns)   --->   "%or_ln20_1 = or i6 %shl_ln, 2" [code/matrix.c:20]   --->   Operation 314 'or' 'or_ln20_1' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_68 : Operation 315 [1/1] (0.00ns)   --->   "%zext_ln20_2 = zext i6 %or_ln20_1 to i64" [code/matrix.c:20]   --->   Operation 315 'zext' 'zext_ln20_2' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_68 : Operation 316 [1/1] (0.00ns)   --->   "%A_addr_2 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_2" [code/matrix.c:20]   --->   Operation 316 'getelementptr' 'A_addr_2' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_68 : Operation 317 [2/2] (2.15ns)   --->   "%A_load_2 = load i32* %A_addr_2, align 4" [code/matrix.c:20]   --->   Operation 317 'load' 'A_load_2' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_68 : Operation 318 [1/1] (8.47ns)   --->   "%mul_ln20_8 = mul nsw i32 %B_load_15, %A_load" [code/matrix.c:20]   --->   Operation 318 'mul' 'mul_ln20_8' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 319 [1/1] (8.47ns)   --->   "%mul_ln20_16 = mul nsw i32 %B_load_23, %A_load" [code/matrix.c:20]   --->   Operation 319 'mul' 'mul_ln20_16' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 320 [1/1] (8.47ns)   --->   "%mul_ln20_24 = mul nsw i32 %B_load_31, %A_load" [code/matrix.c:20]   --->   Operation 320 'mul' 'mul_ln20_24' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 321 [1/1] (8.47ns)   --->   "%mul_ln20_32 = mul nsw i32 %B_load_39, %A_load" [code/matrix.c:20]   --->   Operation 321 'mul' 'mul_ln20_32' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 322 [1/1] (8.47ns)   --->   "%mul_ln20_40 = mul nsw i32 %B_load_47, %A_load" [code/matrix.c:20]   --->   Operation 322 'mul' 'mul_ln20_40' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 323 [1/1] (8.47ns)   --->   "%mul_ln20_48 = mul nsw i32 %B_load_55, %A_load" [code/matrix.c:20]   --->   Operation 323 'mul' 'mul_ln20_48' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 324 [1/1] (8.47ns)   --->   "%mul_ln20_56 = mul nsw i32 %B_load_63, %A_load" [code/matrix.c:20]   --->   Operation 324 'mul' 'mul_ln20_56' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 68> <Delay = 8.47>
+ST_69 : Operation 325 [1/1] (8.47ns)   --->   "%mul_ln20_1 = mul nsw i32 %B_load_8, %A_load_1" [code/matrix.c:20]   --->   Operation 325 'mul' 'mul_ln20_1' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 326 [1/2] (2.15ns)   --->   "%A_load_2 = load i32* %A_addr_2, align 4" [code/matrix.c:20]   --->   Operation 326 'load' 'A_load_2' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_69 : Operation 327 [1/1] (0.00ns)   --->   "%or_ln20_2 = or i6 %shl_ln, 3" [code/matrix.c:20]   --->   Operation 327 'or' 'or_ln20_2' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_69 : Operation 328 [1/1] (0.00ns)   --->   "%zext_ln20_3 = zext i6 %or_ln20_2 to i64" [code/matrix.c:20]   --->   Operation 328 'zext' 'zext_ln20_3' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_69 : Operation 329 [1/1] (0.00ns)   --->   "%A_addr_3 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_3" [code/matrix.c:20]   --->   Operation 329 'getelementptr' 'A_addr_3' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_69 : Operation 330 [2/2] (2.15ns)   --->   "%A_load_3 = load i32* %A_addr_3, align 4" [code/matrix.c:20]   --->   Operation 330 'load' 'A_load_3' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_69 : Operation 331 [1/1] (8.47ns)   --->   "%mul_ln20_9 = mul nsw i32 %B_load_16, %A_load_1" [code/matrix.c:20]   --->   Operation 331 'mul' 'mul_ln20_9' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 332 [1/1] (8.47ns)   --->   "%mul_ln20_17 = mul nsw i32 %B_load_24, %A_load_1" [code/matrix.c:20]   --->   Operation 332 'mul' 'mul_ln20_17' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 333 [1/1] (8.47ns)   --->   "%mul_ln20_25 = mul nsw i32 %B_load_32, %A_load_1" [code/matrix.c:20]   --->   Operation 333 'mul' 'mul_ln20_25' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 334 [1/1] (8.47ns)   --->   "%mul_ln20_33 = mul nsw i32 %B_load_40, %A_load_1" [code/matrix.c:20]   --->   Operation 334 'mul' 'mul_ln20_33' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 335 [1/1] (8.47ns)   --->   "%mul_ln20_41 = mul nsw i32 %B_load_48, %A_load_1" [code/matrix.c:20]   --->   Operation 335 'mul' 'mul_ln20_41' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 336 [1/1] (8.47ns)   --->   "%mul_ln20_49 = mul nsw i32 %B_load_56, %A_load_1" [code/matrix.c:20]   --->   Operation 336 'mul' 'mul_ln20_49' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 337 [1/1] (8.47ns)   --->   "%mul_ln20_57 = mul nsw i32 %B_load_64, %A_load_1" [code/matrix.c:20]   --->   Operation 337 'mul' 'mul_ln20_57' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 69> <Delay = 8.47>
+ST_70 : Operation 338 [1/1] (8.47ns)   --->   "%mul_ln20_2 = mul nsw i32 %B_load_9, %A_load_2" [code/matrix.c:20]   --->   Operation 338 'mul' 'mul_ln20_2' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 339 [1/2] (2.15ns)   --->   "%A_load_3 = load i32* %A_addr_3, align 4" [code/matrix.c:20]   --->   Operation 339 'load' 'A_load_3' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_70 : Operation 340 [1/1] (0.00ns)   --->   "%or_ln20_3 = or i6 %shl_ln, 4" [code/matrix.c:20]   --->   Operation 340 'or' 'or_ln20_3' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_70 : Operation 341 [1/1] (0.00ns)   --->   "%zext_ln20_4 = zext i6 %or_ln20_3 to i64" [code/matrix.c:20]   --->   Operation 341 'zext' 'zext_ln20_4' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_70 : Operation 342 [1/1] (0.00ns)   --->   "%A_addr_4 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_4" [code/matrix.c:20]   --->   Operation 342 'getelementptr' 'A_addr_4' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_70 : Operation 343 [2/2] (2.15ns)   --->   "%A_load_4 = load i32* %A_addr_4, align 4" [code/matrix.c:20]   --->   Operation 343 'load' 'A_load_4' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_70 : Operation 344 [1/1] (2.70ns)   --->   "%add_ln20 = add i32 %mul_ln20_1, %mul_ln20" [code/matrix.c:20]   --->   Operation 344 'add' 'add_ln20' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 345 [1/1] (8.47ns)   --->   "%mul_ln20_10 = mul nsw i32 %B_load_17, %A_load_2" [code/matrix.c:20]   --->   Operation 345 'mul' 'mul_ln20_10' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 346 [1/1] (2.70ns)   --->   "%add_ln20_7 = add i32 %mul_ln20_9, %mul_ln20_8" [code/matrix.c:20]   --->   Operation 346 'add' 'add_ln20_7' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 347 [1/1] (8.47ns)   --->   "%mul_ln20_18 = mul nsw i32 %B_load_25, %A_load_2" [code/matrix.c:20]   --->   Operation 347 'mul' 'mul_ln20_18' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 348 [1/1] (2.70ns)   --->   "%add_ln20_14 = add i32 %mul_ln20_17, %mul_ln20_16" [code/matrix.c:20]   --->   Operation 348 'add' 'add_ln20_14' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 349 [1/1] (8.47ns)   --->   "%mul_ln20_26 = mul nsw i32 %B_load_33, %A_load_2" [code/matrix.c:20]   --->   Operation 349 'mul' 'mul_ln20_26' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 350 [1/1] (2.70ns)   --->   "%add_ln20_21 = add i32 %mul_ln20_25, %mul_ln20_24" [code/matrix.c:20]   --->   Operation 350 'add' 'add_ln20_21' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 351 [1/1] (8.47ns)   --->   "%mul_ln20_34 = mul nsw i32 %B_load_41, %A_load_2" [code/matrix.c:20]   --->   Operation 351 'mul' 'mul_ln20_34' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 352 [1/1] (2.70ns)   --->   "%add_ln20_28 = add i32 %mul_ln20_33, %mul_ln20_32" [code/matrix.c:20]   --->   Operation 352 'add' 'add_ln20_28' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 353 [1/1] (8.47ns)   --->   "%mul_ln20_42 = mul nsw i32 %B_load_49, %A_load_2" [code/matrix.c:20]   --->   Operation 353 'mul' 'mul_ln20_42' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 354 [1/1] (2.70ns)   --->   "%add_ln20_35 = add i32 %mul_ln20_41, %mul_ln20_40" [code/matrix.c:20]   --->   Operation 354 'add' 'add_ln20_35' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 355 [1/1] (8.47ns)   --->   "%mul_ln20_50 = mul nsw i32 %B_load_57, %A_load_2" [code/matrix.c:20]   --->   Operation 355 'mul' 'mul_ln20_50' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 356 [1/1] (2.70ns)   --->   "%add_ln20_42 = add i32 %mul_ln20_49, %mul_ln20_48" [code/matrix.c:20]   --->   Operation 356 'add' 'add_ln20_42' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 357 [1/1] (8.47ns)   --->   "%mul_ln20_58 = mul nsw i32 %B_load_65, %A_load_2" [code/matrix.c:20]   --->   Operation 357 'mul' 'mul_ln20_58' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 358 [1/1] (2.70ns)   --->   "%add_ln20_49 = add i32 %mul_ln20_57, %mul_ln20_56" [code/matrix.c:20]   --->   Operation 358 'add' 'add_ln20_49' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 70> <Delay = 8.47>
+ST_71 : Operation 359 [1/1] (8.47ns)   --->   "%mul_ln20_3 = mul nsw i32 %B_load_10, %A_load_3" [code/matrix.c:20]   --->   Operation 359 'mul' 'mul_ln20_3' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 360 [1/2] (2.15ns)   --->   "%A_load_4 = load i32* %A_addr_4, align 4" [code/matrix.c:20]   --->   Operation 360 'load' 'A_load_4' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_71 : Operation 361 [1/1] (0.00ns)   --->   "%or_ln20_4 = or i6 %shl_ln, 5" [code/matrix.c:20]   --->   Operation 361 'or' 'or_ln20_4' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_71 : Operation 362 [1/1] (0.00ns)   --->   "%zext_ln20_5 = zext i6 %or_ln20_4 to i64" [code/matrix.c:20]   --->   Operation 362 'zext' 'zext_ln20_5' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_71 : Operation 363 [1/1] (0.00ns)   --->   "%A_addr_5 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_5" [code/matrix.c:20]   --->   Operation 363 'getelementptr' 'A_addr_5' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_71 : Operation 364 [2/2] (2.15ns)   --->   "%A_load_5 = load i32* %A_addr_5, align 4" [code/matrix.c:20]   --->   Operation 364 'load' 'A_load_5' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_71 : Operation 365 [1/1] (8.47ns)   --->   "%mul_ln20_11 = mul nsw i32 %B_load_18, %A_load_3" [code/matrix.c:20]   --->   Operation 365 'mul' 'mul_ln20_11' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 366 [1/1] (8.47ns)   --->   "%mul_ln20_19 = mul nsw i32 %B_load_26, %A_load_3" [code/matrix.c:20]   --->   Operation 366 'mul' 'mul_ln20_19' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 367 [1/1] (8.47ns)   --->   "%mul_ln20_27 = mul nsw i32 %B_load_34, %A_load_3" [code/matrix.c:20]   --->   Operation 367 'mul' 'mul_ln20_27' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 368 [1/1] (8.47ns)   --->   "%mul_ln20_35 = mul nsw i32 %B_load_42, %A_load_3" [code/matrix.c:20]   --->   Operation 368 'mul' 'mul_ln20_35' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 369 [1/1] (8.47ns)   --->   "%mul_ln20_43 = mul nsw i32 %B_load_50, %A_load_3" [code/matrix.c:20]   --->   Operation 369 'mul' 'mul_ln20_43' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 370 [1/1] (8.47ns)   --->   "%mul_ln20_51 = mul nsw i32 %B_load_58, %A_load_3" [code/matrix.c:20]   --->   Operation 370 'mul' 'mul_ln20_51' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 371 [1/1] (8.47ns)   --->   "%mul_ln20_59 = mul nsw i32 %B_load_66, %A_load_3" [code/matrix.c:20]   --->   Operation 371 'mul' 'mul_ln20_59' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 71> <Delay = 8.47>
+ST_72 : Operation 372 [1/1] (8.47ns)   --->   "%mul_ln20_4 = mul nsw i32 %B_load_11, %A_load_4" [code/matrix.c:20]   --->   Operation 372 'mul' 'mul_ln20_4' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 373 [1/2] (2.15ns)   --->   "%A_load_5 = load i32* %A_addr_5, align 4" [code/matrix.c:20]   --->   Operation 373 'load' 'A_load_5' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_72 : Operation 374 [1/1] (0.00ns)   --->   "%or_ln20_5 = or i6 %shl_ln, 6" [code/matrix.c:20]   --->   Operation 374 'or' 'or_ln20_5' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_72 : Operation 375 [1/1] (0.00ns)   --->   "%zext_ln20_6 = zext i6 %or_ln20_5 to i64" [code/matrix.c:20]   --->   Operation 375 'zext' 'zext_ln20_6' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_72 : Operation 376 [1/1] (0.00ns)   --->   "%A_addr_6 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_6" [code/matrix.c:20]   --->   Operation 376 'getelementptr' 'A_addr_6' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_72 : Operation 377 [2/2] (2.15ns)   --->   "%A_load_6 = load i32* %A_addr_6, align 4" [code/matrix.c:20]   --->   Operation 377 'load' 'A_load_6' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_72 : Operation 378 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_1 = add i32 %mul_ln20_3, %mul_ln20_2" [code/matrix.c:20]   --->   Operation 378 'add' 'add_ln20_1' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 379 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_2 = add i32 %add_ln20, %add_ln20_1" [code/matrix.c:20]   --->   Operation 379 'add' 'add_ln20_2' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 380 [1/1] (8.47ns)   --->   "%mul_ln20_12 = mul nsw i32 %B_load_19, %A_load_4" [code/matrix.c:20]   --->   Operation 380 'mul' 'mul_ln20_12' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 381 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_8 = add i32 %mul_ln20_11, %mul_ln20_10" [code/matrix.c:20]   --->   Operation 381 'add' 'add_ln20_8' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 382 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_9 = add i32 %add_ln20_7, %add_ln20_8" [code/matrix.c:20]   --->   Operation 382 'add' 'add_ln20_9' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 383 [1/1] (8.47ns)   --->   "%mul_ln20_20 = mul nsw i32 %B_load_27, %A_load_4" [code/matrix.c:20]   --->   Operation 383 'mul' 'mul_ln20_20' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 384 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_15 = add i32 %mul_ln20_19, %mul_ln20_18" [code/matrix.c:20]   --->   Operation 384 'add' 'add_ln20_15' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 385 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_16 = add i32 %add_ln20_14, %add_ln20_15" [code/matrix.c:20]   --->   Operation 385 'add' 'add_ln20_16' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 386 [1/1] (8.47ns)   --->   "%mul_ln20_28 = mul nsw i32 %B_load_35, %A_load_4" [code/matrix.c:20]   --->   Operation 386 'mul' 'mul_ln20_28' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 387 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_22 = add i32 %mul_ln20_27, %mul_ln20_26" [code/matrix.c:20]   --->   Operation 387 'add' 'add_ln20_22' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 388 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_23 = add i32 %add_ln20_21, %add_ln20_22" [code/matrix.c:20]   --->   Operation 388 'add' 'add_ln20_23' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 389 [1/1] (8.47ns)   --->   "%mul_ln20_36 = mul nsw i32 %B_load_43, %A_load_4" [code/matrix.c:20]   --->   Operation 389 'mul' 'mul_ln20_36' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 390 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_29 = add i32 %mul_ln20_35, %mul_ln20_34" [code/matrix.c:20]   --->   Operation 390 'add' 'add_ln20_29' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 391 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_30 = add i32 %add_ln20_28, %add_ln20_29" [code/matrix.c:20]   --->   Operation 391 'add' 'add_ln20_30' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 392 [1/1] (8.47ns)   --->   "%mul_ln20_44 = mul nsw i32 %B_load_51, %A_load_4" [code/matrix.c:20]   --->   Operation 392 'mul' 'mul_ln20_44' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 393 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_36 = add i32 %mul_ln20_43, %mul_ln20_42" [code/matrix.c:20]   --->   Operation 393 'add' 'add_ln20_36' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 394 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_37 = add i32 %add_ln20_35, %add_ln20_36" [code/matrix.c:20]   --->   Operation 394 'add' 'add_ln20_37' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 395 [1/1] (8.47ns)   --->   "%mul_ln20_52 = mul nsw i32 %B_load_59, %A_load_4" [code/matrix.c:20]   --->   Operation 395 'mul' 'mul_ln20_52' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 396 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_43 = add i32 %mul_ln20_51, %mul_ln20_50" [code/matrix.c:20]   --->   Operation 396 'add' 'add_ln20_43' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 397 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_44 = add i32 %add_ln20_42, %add_ln20_43" [code/matrix.c:20]   --->   Operation 397 'add' 'add_ln20_44' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 398 [1/1] (8.47ns)   --->   "%mul_ln20_60 = mul nsw i32 %B_load_67, %A_load_4" [code/matrix.c:20]   --->   Operation 398 'mul' 'mul_ln20_60' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 399 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_50 = add i32 %mul_ln20_59, %mul_ln20_58" [code/matrix.c:20]   --->   Operation 399 'add' 'add_ln20_50' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_72 : Operation 400 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_51 = add i32 %add_ln20_49, %add_ln20_50" [code/matrix.c:20]   --->   Operation 400 'add' 'add_ln20_51' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 73 <SV = 72> <Delay = 8.47>
+ST_73 : Operation 401 [1/1] (8.47ns)   --->   "%mul_ln20_5 = mul nsw i32 %B_load_12, %A_load_5" [code/matrix.c:20]   --->   Operation 401 'mul' 'mul_ln20_5' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 402 [1/2] (2.15ns)   --->   "%A_load_6 = load i32* %A_addr_6, align 4" [code/matrix.c:20]   --->   Operation 402 'load' 'A_load_6' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_73 : Operation 403 [1/1] (0.00ns)   --->   "%or_ln20_6 = or i6 %shl_ln, 7" [code/matrix.c:20]   --->   Operation 403 'or' 'or_ln20_6' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_73 : Operation 404 [1/1] (0.00ns)   --->   "%zext_ln20_7 = zext i6 %or_ln20_6 to i64" [code/matrix.c:20]   --->   Operation 404 'zext' 'zext_ln20_7' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_73 : Operation 405 [1/1] (0.00ns)   --->   "%A_addr_7 = getelementptr [64 x i32]* %A, i64 0, i64 %zext_ln20_7" [code/matrix.c:20]   --->   Operation 405 'getelementptr' 'A_addr_7' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_73 : Operation 406 [2/2] (2.15ns)   --->   "%A_load_7 = load i32* %A_addr_7, align 4" [code/matrix.c:20]   --->   Operation 406 'load' 'A_load_7' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_73 : Operation 407 [1/1] (8.47ns)   --->   "%mul_ln20_13 = mul nsw i32 %B_load_20, %A_load_5" [code/matrix.c:20]   --->   Operation 407 'mul' 'mul_ln20_13' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 408 [1/1] (8.47ns)   --->   "%mul_ln20_21 = mul nsw i32 %B_load_28, %A_load_5" [code/matrix.c:20]   --->   Operation 408 'mul' 'mul_ln20_21' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 409 [1/1] (8.47ns)   --->   "%mul_ln20_29 = mul nsw i32 %B_load_36, %A_load_5" [code/matrix.c:20]   --->   Operation 409 'mul' 'mul_ln20_29' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 410 [1/1] (8.47ns)   --->   "%mul_ln20_37 = mul nsw i32 %B_load_44, %A_load_5" [code/matrix.c:20]   --->   Operation 410 'mul' 'mul_ln20_37' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 411 [1/1] (8.47ns)   --->   "%mul_ln20_45 = mul nsw i32 %B_load_52, %A_load_5" [code/matrix.c:20]   --->   Operation 411 'mul' 'mul_ln20_45' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 412 [1/1] (8.47ns)   --->   "%mul_ln20_53 = mul nsw i32 %B_load_60, %A_load_5" [code/matrix.c:20]   --->   Operation 412 'mul' 'mul_ln20_53' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 413 [1/1] (8.47ns)   --->   "%mul_ln20_61 = mul nsw i32 %B_load_68, %A_load_5" [code/matrix.c:20]   --->   Operation 413 'mul' 'mul_ln20_61' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 73> <Delay = 8.47>
+ST_74 : Operation 414 [1/1] (8.47ns)   --->   "%mul_ln20_6 = mul nsw i32 %B_load_13, %A_load_6" [code/matrix.c:20]   --->   Operation 414 'mul' 'mul_ln20_6' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 415 [1/2] (2.15ns)   --->   "%A_load_7 = load i32* %A_addr_7, align 4" [code/matrix.c:20]   --->   Operation 415 'load' 'A_load_7' <Predicate = (!icmp_ln15)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_74 : Operation 416 [1/1] (2.70ns)   --->   "%add_ln20_3 = add i32 %mul_ln20_5, %mul_ln20_4" [code/matrix.c:20]   --->   Operation 416 'add' 'add_ln20_3' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 417 [1/1] (8.47ns)   --->   "%mul_ln20_14 = mul nsw i32 %B_load_21, %A_load_6" [code/matrix.c:20]   --->   Operation 417 'mul' 'mul_ln20_14' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 418 [1/1] (2.70ns)   --->   "%add_ln20_10 = add i32 %mul_ln20_13, %mul_ln20_12" [code/matrix.c:20]   --->   Operation 418 'add' 'add_ln20_10' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 419 [1/1] (8.47ns)   --->   "%mul_ln20_22 = mul nsw i32 %B_load_29, %A_load_6" [code/matrix.c:20]   --->   Operation 419 'mul' 'mul_ln20_22' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 420 [1/1] (2.70ns)   --->   "%add_ln20_17 = add i32 %mul_ln20_21, %mul_ln20_20" [code/matrix.c:20]   --->   Operation 420 'add' 'add_ln20_17' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 421 [1/1] (8.47ns)   --->   "%mul_ln20_30 = mul nsw i32 %B_load_37, %A_load_6" [code/matrix.c:20]   --->   Operation 421 'mul' 'mul_ln20_30' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 422 [1/1] (2.70ns)   --->   "%add_ln20_24 = add i32 %mul_ln20_29, %mul_ln20_28" [code/matrix.c:20]   --->   Operation 422 'add' 'add_ln20_24' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 423 [1/1] (8.47ns)   --->   "%mul_ln20_38 = mul nsw i32 %B_load_45, %A_load_6" [code/matrix.c:20]   --->   Operation 423 'mul' 'mul_ln20_38' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 424 [1/1] (2.70ns)   --->   "%add_ln20_31 = add i32 %mul_ln20_37, %mul_ln20_36" [code/matrix.c:20]   --->   Operation 424 'add' 'add_ln20_31' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 425 [1/1] (8.47ns)   --->   "%mul_ln20_46 = mul nsw i32 %B_load_53, %A_load_6" [code/matrix.c:20]   --->   Operation 425 'mul' 'mul_ln20_46' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 426 [1/1] (2.70ns)   --->   "%add_ln20_38 = add i32 %mul_ln20_45, %mul_ln20_44" [code/matrix.c:20]   --->   Operation 426 'add' 'add_ln20_38' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 427 [1/1] (8.47ns)   --->   "%mul_ln20_54 = mul nsw i32 %B_load_61, %A_load_6" [code/matrix.c:20]   --->   Operation 427 'mul' 'mul_ln20_54' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 428 [1/1] (2.70ns)   --->   "%add_ln20_45 = add i32 %mul_ln20_53, %mul_ln20_52" [code/matrix.c:20]   --->   Operation 428 'add' 'add_ln20_45' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 429 [1/1] (8.47ns)   --->   "%mul_ln20_62 = mul nsw i32 %B_load_69, %A_load_6" [code/matrix.c:20]   --->   Operation 429 'mul' 'mul_ln20_62' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 430 [1/1] (2.70ns)   --->   "%add_ln20_52 = add i32 %mul_ln20_61, %mul_ln20_60" [code/matrix.c:20]   --->   Operation 430 'add' 'add_ln20_52' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 74> <Delay = 8.47>
+ST_75 : Operation 431 [1/1] (8.47ns)   --->   "%mul_ln20_7 = mul nsw i32 %B_load_14, %A_load_7" [code/matrix.c:20]   --->   Operation 431 'mul' 'mul_ln20_7' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 432 [1/1] (8.47ns)   --->   "%mul_ln20_15 = mul nsw i32 %B_load_22, %A_load_7" [code/matrix.c:20]   --->   Operation 432 'mul' 'mul_ln20_15' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 433 [1/1] (8.47ns)   --->   "%mul_ln20_23 = mul nsw i32 %B_load_30, %A_load_7" [code/matrix.c:20]   --->   Operation 433 'mul' 'mul_ln20_23' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 434 [1/1] (8.47ns)   --->   "%mul_ln20_31 = mul nsw i32 %B_load_38, %A_load_7" [code/matrix.c:20]   --->   Operation 434 'mul' 'mul_ln20_31' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 435 [1/1] (8.47ns)   --->   "%mul_ln20_39 = mul nsw i32 %B_load_46, %A_load_7" [code/matrix.c:20]   --->   Operation 435 'mul' 'mul_ln20_39' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 436 [1/1] (8.47ns)   --->   "%mul_ln20_47 = mul nsw i32 %B_load_54, %A_load_7" [code/matrix.c:20]   --->   Operation 436 'mul' 'mul_ln20_47' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 437 [1/1] (8.47ns)   --->   "%mul_ln20_55 = mul nsw i32 %B_load_62, %A_load_7" [code/matrix.c:20]   --->   Operation 437 'mul' 'mul_ln20_55' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 438 [1/1] (8.47ns)   --->   "%mul_ln20_63 = mul nsw i32 %B_load_70, %A_load_7" [code/matrix.c:20]   --->   Operation 438 'mul' 'mul_ln20_63' <Predicate = (!icmp_ln15)> <Delay = 8.47> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.47> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 75> <Delay = 7.20>
+ST_76 : Operation 439 [1/1] (2.70ns)   --->   "%add_ln20_4 = add i32 %mul_ln20_7, %mul_ln20_6" [code/matrix.c:20]   --->   Operation 439 'add' 'add_ln20_4' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 440 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_5 = add i32 %add_ln20_3, %add_ln20_4" [code/matrix.c:20]   --->   Operation 440 'add' 'add_ln20_5' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 441 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_6 = add nsw i32 %add_ln20_2, %add_ln20_5" [code/matrix.c:20]   --->   Operation 441 'add' 'add_ln20_6' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 442 [1/1] (2.70ns)   --->   "%add_ln20_11 = add i32 %mul_ln20_15, %mul_ln20_14" [code/matrix.c:20]   --->   Operation 442 'add' 'add_ln20_11' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 443 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_12 = add i32 %add_ln20_10, %add_ln20_11" [code/matrix.c:20]   --->   Operation 443 'add' 'add_ln20_12' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 444 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_13 = add nsw i32 %add_ln20_9, %add_ln20_12" [code/matrix.c:20]   --->   Operation 444 'add' 'add_ln20_13' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 445 [1/1] (2.70ns)   --->   "%add_ln20_18 = add i32 %mul_ln20_23, %mul_ln20_22" [code/matrix.c:20]   --->   Operation 445 'add' 'add_ln20_18' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 446 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_19 = add i32 %add_ln20_17, %add_ln20_18" [code/matrix.c:20]   --->   Operation 446 'add' 'add_ln20_19' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 447 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_20 = add nsw i32 %add_ln20_16, %add_ln20_19" [code/matrix.c:20]   --->   Operation 447 'add' 'add_ln20_20' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 448 [1/1] (2.70ns)   --->   "%add_ln20_25 = add i32 %mul_ln20_31, %mul_ln20_30" [code/matrix.c:20]   --->   Operation 448 'add' 'add_ln20_25' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 449 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_26 = add i32 %add_ln20_24, %add_ln20_25" [code/matrix.c:20]   --->   Operation 449 'add' 'add_ln20_26' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 450 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_27 = add nsw i32 %add_ln20_23, %add_ln20_26" [code/matrix.c:20]   --->   Operation 450 'add' 'add_ln20_27' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 451 [1/1] (2.70ns)   --->   "%add_ln20_32 = add i32 %mul_ln20_39, %mul_ln20_38" [code/matrix.c:20]   --->   Operation 451 'add' 'add_ln20_32' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 452 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_33 = add i32 %add_ln20_31, %add_ln20_32" [code/matrix.c:20]   --->   Operation 452 'add' 'add_ln20_33' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 453 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_34 = add nsw i32 %add_ln20_30, %add_ln20_33" [code/matrix.c:20]   --->   Operation 453 'add' 'add_ln20_34' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 454 [1/1] (2.70ns)   --->   "%add_ln20_39 = add i32 %mul_ln20_47, %mul_ln20_46" [code/matrix.c:20]   --->   Operation 454 'add' 'add_ln20_39' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 455 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_40 = add i32 %add_ln20_38, %add_ln20_39" [code/matrix.c:20]   --->   Operation 455 'add' 'add_ln20_40' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 456 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_41 = add nsw i32 %add_ln20_37, %add_ln20_40" [code/matrix.c:20]   --->   Operation 456 'add' 'add_ln20_41' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 457 [1/1] (2.70ns)   --->   "%add_ln20_46 = add i32 %mul_ln20_55, %mul_ln20_54" [code/matrix.c:20]   --->   Operation 457 'add' 'add_ln20_46' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 458 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_47 = add i32 %add_ln20_45, %add_ln20_46" [code/matrix.c:20]   --->   Operation 458 'add' 'add_ln20_47' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 459 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_48 = add nsw i32 %add_ln20_44, %add_ln20_47" [code/matrix.c:20]   --->   Operation 459 'add' 'add_ln20_48' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 460 [1/1] (2.70ns)   --->   "%add_ln20_53 = add i32 %mul_ln20_63, %mul_ln20_62" [code/matrix.c:20]   --->   Operation 460 'add' 'add_ln20_53' <Predicate = (!icmp_ln15)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 461 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln20_54 = add i32 %add_ln20_52, %add_ln20_53" [code/matrix.c:20]   --->   Operation 461 'add' 'add_ln20_54' <Predicate = (!icmp_ln15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_76 : Operation 462 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%add_ln20_55 = add nsw i32 %add_ln20_51, %add_ln20_54" [code/matrix.c:20]   --->   Operation 462 'add' 'add_ln20_55' <Predicate = (!icmp_ln15)> <Delay = 4.50> <Core = "TAddSub">   --->   Core 83 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 77 <SV = 76> <Delay = 3.25>
+ST_77 : Operation 463 [1/1] (0.00ns)   --->   "%tmp_addr = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20" [code/matrix.c:24]   --->   Operation 463 'getelementptr' 'tmp_addr' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_77 : Operation 464 [1/1] (3.25ns)   --->   "store i32 %add_ln20_6, i32* %tmp_addr, align 16" [code/matrix.c:24]   --->   Operation 464 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_77 : Operation 465 [1/1] (0.00ns)   --->   "%tmp_addr_8 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_1" [code/matrix.c:24]   --->   Operation 465 'getelementptr' 'tmp_addr_8' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_77 : Operation 466 [1/1] (3.25ns)   --->   "store i32 %add_ln20_13, i32* %tmp_addr_8, align 4" [code/matrix.c:24]   --->   Operation 466 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 78 <SV = 77> <Delay = 3.25>
+ST_78 : Operation 467 [1/1] (0.00ns)   --->   "%tmp_addr_9 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_2" [code/matrix.c:24]   --->   Operation 467 'getelementptr' 'tmp_addr_9' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_78 : Operation 468 [1/1] (3.25ns)   --->   "store i32 %add_ln20_20, i32* %tmp_addr_9, align 8" [code/matrix.c:24]   --->   Operation 468 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_78 : Operation 469 [1/1] (0.00ns)   --->   "%tmp_addr_10 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_3" [code/matrix.c:24]   --->   Operation 469 'getelementptr' 'tmp_addr_10' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_78 : Operation 470 [1/1] (3.25ns)   --->   "store i32 %add_ln20_27, i32* %tmp_addr_10, align 4" [code/matrix.c:24]   --->   Operation 470 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 79 <SV = 78> <Delay = 3.25>
+ST_79 : Operation 471 [1/1] (0.00ns)   --->   "%tmp_addr_11 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_4" [code/matrix.c:24]   --->   Operation 471 'getelementptr' 'tmp_addr_11' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_79 : Operation 472 [1/1] (3.25ns)   --->   "store i32 %add_ln20_34, i32* %tmp_addr_11, align 16" [code/matrix.c:24]   --->   Operation 472 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_79 : Operation 473 [1/1] (0.00ns)   --->   "%tmp_addr_12 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_5" [code/matrix.c:24]   --->   Operation 473 'getelementptr' 'tmp_addr_12' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_79 : Operation 474 [1/1] (3.25ns)   --->   "store i32 %add_ln20_41, i32* %tmp_addr_12, align 4" [code/matrix.c:24]   --->   Operation 474 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 80 <SV = 79> <Delay = 3.25>
+ST_80 : Operation 475 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2) nounwind" [code/matrix.c:15]   --->   Operation 475 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_80 : Operation 476 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [code/matrix.c:16]   --->   Operation 476 'specpipeline' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_80 : Operation 477 [1/1] (0.00ns)   --->   "%tmp_addr_13 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_6" [code/matrix.c:24]   --->   Operation 477 'getelementptr' 'tmp_addr_13' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_80 : Operation 478 [1/1] (3.25ns)   --->   "store i32 %add_ln20_48, i32* %tmp_addr_13, align 8" [code/matrix.c:24]   --->   Operation 478 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_80 : Operation 479 [1/1] (0.00ns)   --->   "%tmp_addr_14 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln20_7" [code/matrix.c:24]   --->   Operation 479 'getelementptr' 'tmp_addr_14' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_80 : Operation 480 [1/1] (3.25ns)   --->   "store i32 %add_ln20_55, i32* %tmp_addr_14, align 4" [code/matrix.c:24]   --->   Operation 480 'store' <Predicate = (!icmp_ln15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_80 : Operation 481 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2, i32 %tmp_1) nounwind" [code/matrix.c:26]   --->   Operation 481 'specregionend' 'empty_6' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_80 : Operation 482 [1/1] (0.00ns)   --->   "br label %1" [code/matrix.c:15]   --->   Operation 482 'br' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+
+State 81 <SV = 66> <Delay = 1.66>
+ST_81 : Operation 483 [1/1] (1.66ns)   --->   "br label %.preheader" [code/matrix.c:28]   --->   Operation 483 'br' <Predicate = true> <Delay = 1.66>
+
+State 82 <SV = 67> <Delay = 3.25>
+ST_82 : Operation 484 [1/1] (0.00ns)   --->   "%k1_0 = phi i4 [ %k, %hls_label_1 ], [ 0, %.preheader.preheader ]"   --->   Operation 484 'phi' 'k1_0' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 485 [1/1] (1.44ns)   --->   "%icmp_ln28 = icmp eq i4 %k1_0, -8" [code/matrix.c:28]   --->   Operation 485 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 486 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind"   --->   Operation 486 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 487 [1/1] (1.77ns)   --->   "%k = add i4 %k1_0, 1" [code/matrix.c:28]   --->   Operation 487 'add' 'k' <Predicate = true> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 488 [1/1] (0.00ns)   --->   "br i1 %icmp_ln28, label %2, label %hls_label_1" [code/matrix.c:28]   --->   Operation 488 'br' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 489 [1/1] (0.00ns)   --->   "%trunc_ln31 = trunc i4 %k1_0 to i3" [code/matrix.c:31]   --->   Operation 489 'trunc' 'trunc_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 490 [1/1] (0.00ns)   --->   "%shl_ln1 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %trunc_ln31, i3 0)" [code/matrix.c:31]   --->   Operation 490 'bitconcatenate' 'shl_ln1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 491 [1/1] (0.00ns)   --->   "%zext_ln31 = zext i6 %shl_ln1 to i64" [code/matrix.c:31]   --->   Operation 491 'zext' 'zext_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 492 [1/1] (0.00ns)   --->   "%tmp_addr_15 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31" [code/matrix.c:31]   --->   Operation 492 'getelementptr' 'tmp_addr_15' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 493 [2/2] (3.25ns)   --->   "%empty_8 = load i32* %tmp_addr_15, align 16" [code/matrix.c:31]   --->   Operation 493 'load' 'empty_8' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_82 : Operation 494 [1/1] (0.00ns)   --->   "%B_addr_64 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31" [code/matrix.c:31]   --->   Operation 494 'getelementptr' 'B_addr_64' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 495 [2/2] (2.15ns)   --->   "%B_load_71 = load i32* %B_addr_64, align 4" [code/matrix.c:31]   --->   Operation 495 'load' 'B_load_71' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_82 : Operation 496 [1/1] (0.00ns)   --->   "%or_ln31 = or i6 %shl_ln1, 1" [code/matrix.c:31]   --->   Operation 496 'or' 'or_ln31' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 497 [1/1] (0.00ns)   --->   "%zext_ln31_1 = zext i6 %or_ln31 to i64" [code/matrix.c:31]   --->   Operation 497 'zext' 'zext_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 498 [1/1] (0.00ns)   --->   "%tmp_addr_1 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_1" [code/matrix.c:31]   --->   Operation 498 'getelementptr' 'tmp_addr_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_82 : Operation 499 [2/2] (3.25ns)   --->   "%empty_9 = load i32* %tmp_addr_1, align 4" [code/matrix.c:31]   --->   Operation 499 'load' 'empty_9' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 83 <SV = 68> <Delay = 8.11>
+ST_83 : Operation 500 [1/2] (3.25ns)   --->   "%empty_8 = load i32* %tmp_addr_15, align 16" [code/matrix.c:31]   --->   Operation 500 'load' 'empty_8' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 501 [1/2] (2.15ns)   --->   "%B_load_71 = load i32* %B_addr_64, align 4" [code/matrix.c:31]   --->   Operation 501 'load' 'B_load_71' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 502 [1/1] (2.70ns)   --->   "%sub_ln31 = sub nsw i32 %empty_8, %B_load_71" [code/matrix.c:31]   --->   Operation 502 'sub' 'sub_ln31' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_83 : Operation 503 [1/1] (0.00ns)   --->   "%result_addr = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31" [code/matrix.c:31]   --->   Operation 503 'getelementptr' 'result_addr' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 504 [1/1] (2.15ns)   --->   "store i32 %sub_ln31, i32* %result_addr, align 4" [code/matrix.c:31]   --->   Operation 504 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 505 [1/2] (3.25ns)   --->   "%empty_9 = load i32* %tmp_addr_1, align 4" [code/matrix.c:31]   --->   Operation 505 'load' 'empty_9' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 506 [1/1] (0.00ns)   --->   "%B_addr_65 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_1" [code/matrix.c:31]   --->   Operation 506 'getelementptr' 'B_addr_65' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 507 [2/2] (2.15ns)   --->   "%B_load_1 = load i32* %B_addr_65, align 4" [code/matrix.c:31]   --->   Operation 507 'load' 'B_load_1' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 508 [1/1] (0.00ns)   --->   "%or_ln31_1 = or i6 %shl_ln1, 2" [code/matrix.c:31]   --->   Operation 508 'or' 'or_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 509 [1/1] (0.00ns)   --->   "%zext_ln31_2 = zext i6 %or_ln31_1 to i64" [code/matrix.c:31]   --->   Operation 509 'zext' 'zext_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 510 [1/1] (0.00ns)   --->   "%tmp_addr_2 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_2" [code/matrix.c:31]   --->   Operation 510 'getelementptr' 'tmp_addr_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 511 [2/2] (3.25ns)   --->   "%empty_10 = load i32* %tmp_addr_2, align 8" [code/matrix.c:31]   --->   Operation 511 'load' 'empty_10' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_83 : Operation 512 [1/1] (0.00ns)   --->   "%or_ln31_2 = or i6 %shl_ln1, 3" [code/matrix.c:31]   --->   Operation 512 'or' 'or_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 513 [1/1] (0.00ns)   --->   "%zext_ln31_3 = zext i6 %or_ln31_2 to i64" [code/matrix.c:31]   --->   Operation 513 'zext' 'zext_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 514 [1/1] (0.00ns)   --->   "%tmp_addr_3 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_3" [code/matrix.c:31]   --->   Operation 514 'getelementptr' 'tmp_addr_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_83 : Operation 515 [2/2] (3.25ns)   --->   "%empty_11 = load i32* %tmp_addr_3, align 4" [code/matrix.c:31]   --->   Operation 515 'load' 'empty_11' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 84 <SV = 69> <Delay = 7.00>
+ST_84 : Operation 516 [1/2] (2.15ns)   --->   "%B_load_1 = load i32* %B_addr_65, align 4" [code/matrix.c:31]   --->   Operation 516 'load' 'B_load_1' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 517 [1/1] (2.70ns)   --->   "%sub_ln31_1 = sub nsw i32 %empty_9, %B_load_1" [code/matrix.c:31]   --->   Operation 517 'sub' 'sub_ln31_1' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_84 : Operation 518 [1/1] (0.00ns)   --->   "%result_addr_1 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_1" [code/matrix.c:31]   --->   Operation 518 'getelementptr' 'result_addr_1' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 519 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_1, i32* %result_addr_1, align 4" [code/matrix.c:31]   --->   Operation 519 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 520 [1/2] (3.25ns)   --->   "%empty_10 = load i32* %tmp_addr_2, align 8" [code/matrix.c:31]   --->   Operation 520 'load' 'empty_10' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 521 [1/1] (0.00ns)   --->   "%B_addr_66 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_2" [code/matrix.c:31]   --->   Operation 521 'getelementptr' 'B_addr_66' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 522 [2/2] (2.15ns)   --->   "%B_load_2 = load i32* %B_addr_66, align 4" [code/matrix.c:31]   --->   Operation 522 'load' 'B_load_2' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 523 [1/2] (3.25ns)   --->   "%empty_11 = load i32* %tmp_addr_3, align 4" [code/matrix.c:31]   --->   Operation 523 'load' 'empty_11' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 524 [1/1] (0.00ns)   --->   "%or_ln31_3 = or i6 %shl_ln1, 4" [code/matrix.c:31]   --->   Operation 524 'or' 'or_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 525 [1/1] (0.00ns)   --->   "%zext_ln31_4 = zext i6 %or_ln31_3 to i64" [code/matrix.c:31]   --->   Operation 525 'zext' 'zext_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 526 [1/1] (0.00ns)   --->   "%tmp_addr_4 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_4" [code/matrix.c:31]   --->   Operation 526 'getelementptr' 'tmp_addr_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 527 [2/2] (3.25ns)   --->   "%empty_12 = load i32* %tmp_addr_4, align 16" [code/matrix.c:31]   --->   Operation 527 'load' 'empty_12' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_84 : Operation 528 [1/1] (0.00ns)   --->   "%or_ln31_4 = or i6 %shl_ln1, 5" [code/matrix.c:31]   --->   Operation 528 'or' 'or_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 529 [1/1] (0.00ns)   --->   "%zext_ln31_5 = zext i6 %or_ln31_4 to i64" [code/matrix.c:31]   --->   Operation 529 'zext' 'zext_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 530 [1/1] (0.00ns)   --->   "%tmp_addr_5 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_5" [code/matrix.c:31]   --->   Operation 530 'getelementptr' 'tmp_addr_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_84 : Operation 531 [2/2] (3.25ns)   --->   "%empty_13 = load i32* %tmp_addr_5, align 4" [code/matrix.c:31]   --->   Operation 531 'load' 'empty_13' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 85 <SV = 70> <Delay = 7.00>
+ST_85 : Operation 532 [1/2] (2.15ns)   --->   "%B_load_2 = load i32* %B_addr_66, align 4" [code/matrix.c:31]   --->   Operation 532 'load' 'B_load_2' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 533 [1/1] (2.70ns)   --->   "%sub_ln31_2 = sub nsw i32 %empty_10, %B_load_2" [code/matrix.c:31]   --->   Operation 533 'sub' 'sub_ln31_2' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 534 [1/1] (0.00ns)   --->   "%result_addr_2 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_2" [code/matrix.c:31]   --->   Operation 534 'getelementptr' 'result_addr_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 535 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_2, i32* %result_addr_2, align 4" [code/matrix.c:31]   --->   Operation 535 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 536 [1/1] (0.00ns)   --->   "%B_addr_67 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_3" [code/matrix.c:31]   --->   Operation 536 'getelementptr' 'B_addr_67' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 537 [2/2] (2.15ns)   --->   "%B_load_3 = load i32* %B_addr_67, align 4" [code/matrix.c:31]   --->   Operation 537 'load' 'B_load_3' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 538 [1/2] (3.25ns)   --->   "%empty_12 = load i32* %tmp_addr_4, align 16" [code/matrix.c:31]   --->   Operation 538 'load' 'empty_12' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 539 [1/2] (3.25ns)   --->   "%empty_13 = load i32* %tmp_addr_5, align 4" [code/matrix.c:31]   --->   Operation 539 'load' 'empty_13' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 540 [1/1] (0.00ns)   --->   "%or_ln31_5 = or i6 %shl_ln1, 6" [code/matrix.c:31]   --->   Operation 540 'or' 'or_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 541 [1/1] (0.00ns)   --->   "%zext_ln31_6 = zext i6 %or_ln31_5 to i64" [code/matrix.c:31]   --->   Operation 541 'zext' 'zext_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 542 [1/1] (0.00ns)   --->   "%tmp_addr_6 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_6" [code/matrix.c:31]   --->   Operation 542 'getelementptr' 'tmp_addr_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 543 [2/2] (3.25ns)   --->   "%empty_14 = load i32* %tmp_addr_6, align 8" [code/matrix.c:31]   --->   Operation 543 'load' 'empty_14' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_85 : Operation 544 [1/1] (0.00ns)   --->   "%or_ln31_6 = or i6 %shl_ln1, 7" [code/matrix.c:31]   --->   Operation 544 'or' 'or_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 545 [1/1] (0.00ns)   --->   "%zext_ln31_7 = zext i6 %or_ln31_6 to i64" [code/matrix.c:31]   --->   Operation 545 'zext' 'zext_ln31_7' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 546 [1/1] (0.00ns)   --->   "%tmp_addr_7 = getelementptr inbounds [64 x i32]* %tmp, i64 0, i64 %zext_ln31_7" [code/matrix.c:31]   --->   Operation 546 'getelementptr' 'tmp_addr_7' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_85 : Operation 547 [2/2] (3.25ns)   --->   "%empty_15 = load i32* %tmp_addr_7, align 4" [code/matrix.c:31]   --->   Operation 547 'load' 'empty_15' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 86 <SV = 71> <Delay = 7.00>
+ST_86 : Operation 548 [1/2] (2.15ns)   --->   "%B_load_3 = load i32* %B_addr_67, align 4" [code/matrix.c:31]   --->   Operation 548 'load' 'B_load_3' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_86 : Operation 549 [1/1] (2.70ns)   --->   "%sub_ln31_3 = sub nsw i32 %empty_11, %B_load_3" [code/matrix.c:31]   --->   Operation 549 'sub' 'sub_ln31_3' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_86 : Operation 550 [1/1] (0.00ns)   --->   "%result_addr_3 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_3" [code/matrix.c:31]   --->   Operation 550 'getelementptr' 'result_addr_3' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_86 : Operation 551 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_3, i32* %result_addr_3, align 4" [code/matrix.c:31]   --->   Operation 551 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_86 : Operation 552 [1/1] (0.00ns)   --->   "%B_addr_68 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_4" [code/matrix.c:31]   --->   Operation 552 'getelementptr' 'B_addr_68' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_86 : Operation 553 [2/2] (2.15ns)   --->   "%B_load_4 = load i32* %B_addr_68, align 4" [code/matrix.c:31]   --->   Operation 553 'load' 'B_load_4' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_86 : Operation 554 [1/2] (3.25ns)   --->   "%empty_14 = load i32* %tmp_addr_6, align 8" [code/matrix.c:31]   --->   Operation 554 'load' 'empty_14' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_86 : Operation 555 [1/2] (3.25ns)   --->   "%empty_15 = load i32* %tmp_addr_7, align 4" [code/matrix.c:31]   --->   Operation 555 'load' 'empty_15' <Predicate = (!icmp_ln28)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 87 <SV = 72> <Delay = 7.00>
+ST_87 : Operation 556 [1/2] (2.15ns)   --->   "%B_load_4 = load i32* %B_addr_68, align 4" [code/matrix.c:31]   --->   Operation 556 'load' 'B_load_4' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_87 : Operation 557 [1/1] (2.70ns)   --->   "%sub_ln31_4 = sub nsw i32 %empty_12, %B_load_4" [code/matrix.c:31]   --->   Operation 557 'sub' 'sub_ln31_4' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_87 : Operation 558 [1/1] (0.00ns)   --->   "%result_addr_4 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_4" [code/matrix.c:31]   --->   Operation 558 'getelementptr' 'result_addr_4' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_87 : Operation 559 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_4, i32* %result_addr_4, align 4" [code/matrix.c:31]   --->   Operation 559 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_87 : Operation 560 [1/1] (0.00ns)   --->   "%B_addr_69 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_5" [code/matrix.c:31]   --->   Operation 560 'getelementptr' 'B_addr_69' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_87 : Operation 561 [2/2] (2.15ns)   --->   "%B_load_5 = load i32* %B_addr_69, align 4" [code/matrix.c:31]   --->   Operation 561 'load' 'B_load_5' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 88 <SV = 73> <Delay = 7.00>
+ST_88 : Operation 562 [1/2] (2.15ns)   --->   "%B_load_5 = load i32* %B_addr_69, align 4" [code/matrix.c:31]   --->   Operation 562 'load' 'B_load_5' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_88 : Operation 563 [1/1] (2.70ns)   --->   "%sub_ln31_5 = sub nsw i32 %empty_13, %B_load_5" [code/matrix.c:31]   --->   Operation 563 'sub' 'sub_ln31_5' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 564 [1/1] (0.00ns)   --->   "%result_addr_5 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_5" [code/matrix.c:31]   --->   Operation 564 'getelementptr' 'result_addr_5' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_88 : Operation 565 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_5, i32* %result_addr_5, align 4" [code/matrix.c:31]   --->   Operation 565 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_88 : Operation 566 [1/1] (0.00ns)   --->   "%B_addr_70 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_6" [code/matrix.c:31]   --->   Operation 566 'getelementptr' 'B_addr_70' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_88 : Operation 567 [2/2] (2.15ns)   --->   "%B_load_6 = load i32* %B_addr_70, align 4" [code/matrix.c:31]   --->   Operation 567 'load' 'B_load_6' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 89 <SV = 74> <Delay = 7.00>
+ST_89 : Operation 568 [1/2] (2.15ns)   --->   "%B_load_6 = load i32* %B_addr_70, align 4" [code/matrix.c:31]   --->   Operation 568 'load' 'B_load_6' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_89 : Operation 569 [1/1] (2.70ns)   --->   "%sub_ln31_6 = sub nsw i32 %empty_14, %B_load_6" [code/matrix.c:31]   --->   Operation 569 'sub' 'sub_ln31_6' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 570 [1/1] (0.00ns)   --->   "%result_addr_6 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_6" [code/matrix.c:31]   --->   Operation 570 'getelementptr' 'result_addr_6' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_89 : Operation 571 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_6, i32* %result_addr_6, align 4" [code/matrix.c:31]   --->   Operation 571 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_89 : Operation 572 [1/1] (0.00ns)   --->   "%B_addr_71 = getelementptr [64 x i32]* %B, i64 0, i64 %zext_ln31_7" [code/matrix.c:31]   --->   Operation 572 'getelementptr' 'B_addr_71' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_89 : Operation 573 [2/2] (2.15ns)   --->   "%B_load_7 = load i32* %B_addr_71, align 4" [code/matrix.c:31]   --->   Operation 573 'load' 'B_load_7' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+
+State 90 <SV = 75> <Delay = 7.00>
+ST_90 : Operation 574 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str3) nounwind" [code/matrix.c:28]   --->   Operation 574 'specregionbegin' 'tmp_2' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_90 : Operation 575 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [code/matrix.c:29]   --->   Operation 575 'specpipeline' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_90 : Operation 576 [1/2] (2.15ns)   --->   "%B_load_7 = load i32* %B_addr_71, align 4" [code/matrix.c:31]   --->   Operation 576 'load' 'B_load_7' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_90 : Operation 577 [1/1] (2.70ns)   --->   "%sub_ln31_7 = sub nsw i32 %empty_15, %B_load_7" [code/matrix.c:31]   --->   Operation 577 'sub' 'sub_ln31_7' <Predicate = (!icmp_ln28)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_90 : Operation 578 [1/1] (0.00ns)   --->   "%result_addr_7 = getelementptr [64 x i32]* %result, i64 0, i64 %zext_ln31_7" [code/matrix.c:31]   --->   Operation 578 'getelementptr' 'result_addr_7' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_90 : Operation 579 [1/1] (2.15ns)   --->   "store i32 %sub_ln31_7, i32* %result_addr_7, align 4" [code/matrix.c:31]   --->   Operation 579 'store' <Predicate = (!icmp_ln28)> <Delay = 2.15> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 64> <RAM>
+ST_90 : Operation 580 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str3, i32 %tmp_2) nounwind" [code/matrix.c:35]   --->   Operation 580 'specregionend' 'empty_16' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_90 : Operation 581 [1/1] (0.00ns)   --->   "br label %.preheader" [code/matrix.c:28]   --->   Operation 581 'br' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+
+State 91 <SV = 68> <Delay = 0.00>
+ST_91 : Operation 582 [1/1] (0.00ns)   --->   "ret void" [code/matrix.c:36]   --->   Operation 582 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('B_addr', code/matrix.c:20) [16]  (0 ns)
+	'load' operation ('B_load', code/matrix.c:20) on array 'B' [17]  (2.15 ns)
+
+ <State 2>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load', code/matrix.c:20) on array 'B' [17]  (2.15 ns)
+
+ <State 3>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_8', code/matrix.c:20) on array 'B' [19]  (2.15 ns)
+
+ <State 4>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_9', code/matrix.c:20) on array 'B' [21]  (2.15 ns)
+
+ <State 5>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_10', code/matrix.c:20) on array 'B' [23]  (2.15 ns)
+
+ <State 6>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_11', code/matrix.c:20) on array 'B' [25]  (2.15 ns)
+
+ <State 7>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_12', code/matrix.c:20) on array 'B' [27]  (2.15 ns)
+
+ <State 8>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_13', code/matrix.c:20) on array 'B' [29]  (2.15 ns)
+
+ <State 9>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_14', code/matrix.c:20) on array 'B' [31]  (2.15 ns)
+
+ <State 10>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_15', code/matrix.c:20) on array 'B' [33]  (2.15 ns)
+
+ <State 11>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_16', code/matrix.c:20) on array 'B' [35]  (2.15 ns)
+
+ <State 12>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_17', code/matrix.c:20) on array 'B' [37]  (2.15 ns)
+
+ <State 13>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_18', code/matrix.c:20) on array 'B' [39]  (2.15 ns)
+
+ <State 14>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_19', code/matrix.c:20) on array 'B' [41]  (2.15 ns)
+
+ <State 15>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_20', code/matrix.c:20) on array 'B' [43]  (2.15 ns)
+
+ <State 16>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_21', code/matrix.c:20) on array 'B' [45]  (2.15 ns)
+
+ <State 17>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_22', code/matrix.c:20) on array 'B' [47]  (2.15 ns)
+
+ <State 18>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_23', code/matrix.c:20) on array 'B' [49]  (2.15 ns)
+
+ <State 19>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_24', code/matrix.c:20) on array 'B' [51]  (2.15 ns)
+
+ <State 20>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_25', code/matrix.c:20) on array 'B' [53]  (2.15 ns)
+
+ <State 21>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_26', code/matrix.c:20) on array 'B' [55]  (2.15 ns)
+
+ <State 22>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_27', code/matrix.c:20) on array 'B' [57]  (2.15 ns)
+
+ <State 23>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_28', code/matrix.c:20) on array 'B' [59]  (2.15 ns)
+
+ <State 24>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_29', code/matrix.c:20) on array 'B' [61]  (2.15 ns)
+
+ <State 25>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_30', code/matrix.c:20) on array 'B' [63]  (2.15 ns)
+
+ <State 26>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_31', code/matrix.c:20) on array 'B' [65]  (2.15 ns)
+
+ <State 27>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_32', code/matrix.c:20) on array 'B' [67]  (2.15 ns)
+
+ <State 28>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_33', code/matrix.c:20) on array 'B' [69]  (2.15 ns)
+
+ <State 29>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_34', code/matrix.c:20) on array 'B' [71]  (2.15 ns)
+
+ <State 30>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_35', code/matrix.c:20) on array 'B' [73]  (2.15 ns)
+
+ <State 31>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_36', code/matrix.c:20) on array 'B' [75]  (2.15 ns)
+
+ <State 32>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_37', code/matrix.c:20) on array 'B' [77]  (2.15 ns)
+
+ <State 33>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_38', code/matrix.c:20) on array 'B' [79]  (2.15 ns)
+
+ <State 34>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_39', code/matrix.c:20) on array 'B' [81]  (2.15 ns)
+
+ <State 35>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_40', code/matrix.c:20) on array 'B' [83]  (2.15 ns)
+
+ <State 36>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_41', code/matrix.c:20) on array 'B' [85]  (2.15 ns)
+
+ <State 37>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_42', code/matrix.c:20) on array 'B' [87]  (2.15 ns)
+
+ <State 38>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_43', code/matrix.c:20) on array 'B' [89]  (2.15 ns)
+
+ <State 39>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_44', code/matrix.c:20) on array 'B' [91]  (2.15 ns)
+
+ <State 40>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_45', code/matrix.c:20) on array 'B' [93]  (2.15 ns)
+
+ <State 41>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_46', code/matrix.c:20) on array 'B' [95]  (2.15 ns)
+
+ <State 42>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_47', code/matrix.c:20) on array 'B' [97]  (2.15 ns)
+
+ <State 43>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_48', code/matrix.c:20) on array 'B' [99]  (2.15 ns)
+
+ <State 44>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_49', code/matrix.c:20) on array 'B' [101]  (2.15 ns)
+
+ <State 45>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_50', code/matrix.c:20) on array 'B' [103]  (2.15 ns)
+
+ <State 46>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_51', code/matrix.c:20) on array 'B' [105]  (2.15 ns)
+
+ <State 47>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_52', code/matrix.c:20) on array 'B' [107]  (2.15 ns)
+
+ <State 48>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_53', code/matrix.c:20) on array 'B' [109]  (2.15 ns)
+
+ <State 49>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_54', code/matrix.c:20) on array 'B' [111]  (2.15 ns)
+
+ <State 50>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_55', code/matrix.c:20) on array 'B' [113]  (2.15 ns)
+
+ <State 51>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_56', code/matrix.c:20) on array 'B' [115]  (2.15 ns)
+
+ <State 52>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_57', code/matrix.c:20) on array 'B' [117]  (2.15 ns)
+
+ <State 53>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_58', code/matrix.c:20) on array 'B' [119]  (2.15 ns)
+
+ <State 54>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_59', code/matrix.c:20) on array 'B' [121]  (2.15 ns)
+
+ <State 55>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_60', code/matrix.c:20) on array 'B' [123]  (2.15 ns)
+
+ <State 56>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_61', code/matrix.c:20) on array 'B' [125]  (2.15 ns)
+
+ <State 57>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_62', code/matrix.c:20) on array 'B' [127]  (2.15 ns)
+
+ <State 58>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_63', code/matrix.c:20) on array 'B' [129]  (2.15 ns)
+
+ <State 59>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_64', code/matrix.c:20) on array 'B' [131]  (2.15 ns)
+
+ <State 60>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_65', code/matrix.c:20) on array 'B' [133]  (2.15 ns)
+
+ <State 61>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_66', code/matrix.c:20) on array 'B' [135]  (2.15 ns)
+
+ <State 62>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_67', code/matrix.c:20) on array 'B' [137]  (2.15 ns)
+
+ <State 63>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_68', code/matrix.c:20) on array 'B' [139]  (2.15 ns)
+
+ <State 64>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_69', code/matrix.c:20) on array 'B' [141]  (2.15 ns)
+
+ <State 65>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('B_load_70', code/matrix.c:20) on array 'B' [143]  (2.15 ns)
+
+ <State 66>: 2.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', code/matrix.c:15) [146]  (0 ns)
+	'getelementptr' operation ('A_addr', code/matrix.c:20) [157]  (0 ns)
+	'load' operation ('A_load', code/matrix.c:20) on array 'A' [158]  (2.15 ns)
+
+ <State 67>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('A_load', code/matrix.c:20) on array 'A' [158]  (2.15 ns)
+
+ <State 68>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20', code/matrix.c:20) [159]  (8.47 ns)
+
+ <State 69>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_1', code/matrix.c:20) [164]  (8.47 ns)
+
+ <State 70>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_2', code/matrix.c:20) [169]  (8.47 ns)
+
+ <State 71>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_3', code/matrix.c:20) [174]  (8.47 ns)
+
+ <State 72>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_4', code/matrix.c:20) [179]  (8.47 ns)
+
+ <State 73>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_5', code/matrix.c:20) [184]  (8.47 ns)
+
+ <State 74>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_6', code/matrix.c:20) [189]  (8.47 ns)
+
+ <State 75>: 8.47ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln20_7', code/matrix.c:20) [194]  (8.47 ns)
+
+ <State 76>: 7.21ns
+The critical path consists of the following:
+	'add' operation ('add_ln20_4', code/matrix.c:20) [199]  (2.7 ns)
+	'add' operation ('add_ln20_5', code/matrix.c:20) [200]  (0 ns)
+	'add' operation ('add_ln20_6', code/matrix.c:20) [201]  (4.5 ns)
+
+ <State 77>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('tmp_addr', code/matrix.c:24) [202]  (0 ns)
+	'store' operation ('store_ln24', code/matrix.c:24) of variable 'add_ln20_6', code/matrix.c:20 on array 'tmp', code/matrix.c:13 [203]  (3.26 ns)
+
+ <State 78>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('tmp_addr_9', code/matrix.c:24) [236]  (0 ns)
+	'store' operation ('store_ln24', code/matrix.c:24) of variable 'add_ln20_20', code/matrix.c:20 on array 'tmp', code/matrix.c:13 [237]  (3.26 ns)
+
+ <State 79>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('tmp_addr_11', code/matrix.c:24) [270]  (0 ns)
+	'store' operation ('store_ln24', code/matrix.c:24) of variable 'add_ln20_34', code/matrix.c:20 on array 'tmp', code/matrix.c:13 [271]  (3.26 ns)
+
+ <State 80>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('tmp_addr_13', code/matrix.c:24) [304]  (0 ns)
+	'store' operation ('store_ln24', code/matrix.c:24) of variable 'add_ln20_48', code/matrix.c:20 on array 'tmp', code/matrix.c:13 [305]  (3.26 ns)
+
+ <State 81>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k') with incoming values : ('k', code/matrix.c:28) [328]  (1.66 ns)
+
+ <State 82>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', code/matrix.c:28) [328]  (0 ns)
+	'getelementptr' operation ('tmp_addr_15', code/matrix.c:31) [339]  (0 ns)
+	'load' operation ('empty_8', code/matrix.c:31) on array 'tmp', code/matrix.c:13 [340]  (3.26 ns)
+
+ <State 83>: 8.11ns
+The critical path consists of the following:
+	'load' operation ('empty_8', code/matrix.c:31) on array 'tmp', code/matrix.c:13 [340]  (3.26 ns)
+	'sub' operation ('sub_ln31', code/matrix.c:31) [343]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31', code/matrix.c:31 on array 'result' [345]  (2.15 ns)
+
+ <State 84>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_1', code/matrix.c:31) on array 'B' [351]  (2.15 ns)
+	'sub' operation ('sub_ln31_1', code/matrix.c:31) [352]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_1', code/matrix.c:31 on array 'result' [354]  (2.15 ns)
+
+ <State 85>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_2', code/matrix.c:31) on array 'B' [360]  (2.15 ns)
+	'sub' operation ('sub_ln31_2', code/matrix.c:31) [361]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_2', code/matrix.c:31 on array 'result' [363]  (2.15 ns)
+
+ <State 86>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_3', code/matrix.c:31) on array 'B' [369]  (2.15 ns)
+	'sub' operation ('sub_ln31_3', code/matrix.c:31) [370]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_3', code/matrix.c:31 on array 'result' [372]  (2.15 ns)
+
+ <State 87>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_4', code/matrix.c:31) on array 'B' [378]  (2.15 ns)
+	'sub' operation ('sub_ln31_4', code/matrix.c:31) [379]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_4', code/matrix.c:31 on array 'result' [381]  (2.15 ns)
+
+ <State 88>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_5', code/matrix.c:31) on array 'B' [387]  (2.15 ns)
+	'sub' operation ('sub_ln31_5', code/matrix.c:31) [388]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_5', code/matrix.c:31 on array 'result' [390]  (2.15 ns)
+
+ <State 89>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_6', code/matrix.c:31) on array 'B' [396]  (2.15 ns)
+	'sub' operation ('sub_ln31_6', code/matrix.c:31) [397]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_6', code/matrix.c:31 on array 'result' [399]  (2.15 ns)
+
+ <State 90>: 7.01ns
+The critical path consists of the following:
+	'load' operation ('B_load_7', code/matrix.c:31) on array 'B' [405]  (2.15 ns)
+	'sub' operation ('sub_ln31_7', code/matrix.c:31) [406]  (2.7 ns)
+	'store' operation ('store_ln31', code/matrix.c:31) of variable 'sub_ln31_7', code/matrix.c:31 on array 'result' [408]  (2.15 ns)
+
+ <State 91>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,1590 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:30) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:21) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:32) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:22) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 15.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:33) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.709 seconds; current allocated memory: 104.661 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.184 seconds; current allocated memory: 106.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 109.278 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 183.555 ; gain = 116.832
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 9.575 seconds; peak allocated memory: 109.278 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:15) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.35 seconds; current allocated memory: 105.103 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 24 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 106.370 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.188 seconds; current allocated memory: 108.319 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 184.535 ; gain = 93.055
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.736 seconds; peak allocated memory: 108.319 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.012 seconds; current allocated memory: 101.252 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.064 seconds; current allocated memory: 101.677 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 102.239 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 185.145 ; gain = 93.539
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 4.858 seconds; peak allocated memory: 102.239 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:15) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.299 seconds; current allocated memory: 105.134 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 24 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.119 seconds; current allocated memory: 106.386 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.191 seconds; current allocated memory: 108.335 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 184.266 ; gain = 92.750
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.637 seconds; peak allocated memory: 108.335 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:15) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:31) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:33) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-102] Partitioning array 'tmp' (code/matrix.c:13) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.312 ; gain = 92.781
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.668 seconds; current allocated memory: 121.069 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 64 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.561 seconds; current allocated memory: 126.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'B' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.737 seconds; current allocated memory: 135.550 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 224.863 ; gain = 133.332
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 9.332 seconds; peak allocated memory: 135.550 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:15) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:22) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:32) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:34) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-102] Partitioning array 'tmp' (code/matrix.c:13) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...448 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 184.152 ; gain = 92.613
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.297 seconds; current allocated memory: 114.356 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.805 seconds; current allocated memory: 118.767 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'B' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.634 seconds; current allocated memory: 124.847 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 209.453 ; gain = 117.914
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 9.128 seconds; peak allocated memory: 124.847 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:18) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:29) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.969 seconds; current allocated memory: 102.401 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 103.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.126 seconds; current allocated memory: 104.144 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.125 ; gain = 94.059
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 4.976 seconds; peak allocated memory: 104.144 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:18) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:31) in function 'calc' completely with a factor of 8.
+WARNING: [XFORM 203-104] Completely partitioning array 'A' (code/matrix.c:4) accessed through non-constant indices on dimension 1 (code/matrix.c:23:17), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'A' (code/matrix.c:4) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'B' (code/matrix.c:5) accessed through non-constant indices on dimension 1 (code/matrix.c:23:17), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'B' (code/matrix.c:5) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'tmp' (code/matrix.c:13) accessed through non-constant indices on dimension 1 (code/matrix.c:34:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'tmp' (code/matrix.c:13) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 184.625 ; gain = 93.160
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.913 seconds; current allocated memory: 132.634 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 24 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.587 seconds; current allocated memory: 141.886 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A_0', 'A_2', 'A_3', 'A_4', 'A_5', 'A_6', 'A_7', 'A_8', 'A_9', 'A_10', 'A_11', 'A_12', 'A_13', 'A_14', 'A_15', 'A_16', 'A_17', 'A_18', 'A_19', 'A_20', 'A_21', 'A_22', 'A_23', 'A_24', 'A_25', 'A_26', 'A_27', 'A_28', 'A_29', 'A_30', 'A_31', 'A_32', 'A_33', 'A_34', 'A_35', 'A_36', 'A_37', 'A_38', 'A_39', 'A_40', 'A_41', 'A_42', 'A_43', 'A_44', 'A_45', 'A_46', 'A_47', 'A_48', 'A_49', 'A_50', 'A_51', 'A_52', 'A_53', 'A_54', 'A_55', 'A_56', 'A_57', 'A_58', 'A_59', 'A_60', 'A_61', 'A_62', 'A_63', 'B_0', 'B_1', 'B_2', 'B_3', 'B_4', 'B_5', 'B_6', 'B_7', 'B_8', 'B_9', 'B_10', 'B_11', 'B_12', 'B_13', 'B_14', 'B_15', 'B_16', 'B_17', 'B_18', 'B_19', 'B_20', 'B_21', 'B_22', 'B_23', 'B_24', 'B_25', 'B_26', 'B_27', 'B_28', 'B_29', 'B_30', 'B_31', 'B_32', 'B_33', 'B_34', 'B_35', 'B_36', 'B_37', 'B_38', 'B_39', 'B_40', 'B_41', 'B_42', 'B_43', 'B_44', 'B_45', 'B_46', 'B_47', 'B_48', 'B_49', 'B_50', 'B_51', 'B_52', 'B_53', 'B_54', 'B_55', 'B_56', 'B_57', 'B_58', 'B_59', 'B_60', 'B_61', 'B_62', 'B_63' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Generating core module 'calc_mux_646_32_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 1.904 seconds; current allocated memory: 150.870 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 233.742 ; gain = 142.277
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 10.888 seconds; peak allocated memory: 150.870 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (code/matrix.c:15) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (code/matrix.c:28) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.249 seconds; current allocated memory: 105.138 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 24 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.121 seconds; current allocated memory: 106.390 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.189 seconds; current allocated memory: 108.339 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 184.258 ; gain = 92.730
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.602 seconds; peak allocated memory: 108.339 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 15.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.289 seconds; current allocated memory: 104.619 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.174 seconds; current allocated memory: 106.170 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.275 seconds; current allocated memory: 109.268 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 184.844 ; gain = 93.273
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.941 seconds; peak allocated memory: 109.268 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:20) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:33) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:22) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:24) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:35) in function 'calc' completely with a factor of 8.
+WARNING: [XFORM 203-104] Completely partitioning array 'A' (code/matrix.c:4) accessed through non-constant indices on dimension 1 (code/matrix.c:25:17), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'A' (code/matrix.c:4) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'B' (code/matrix.c:5) accessed through non-constant indices on dimension 1 (code/matrix.c:36:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'B' (code/matrix.c:5) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'tmp' (code/matrix.c:13) accessed through non-constant indices on dimension 1 (code/matrix.c:36:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'tmp' (code/matrix.c:13) in dimension 1 completely.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...104 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.344 ; gain = 92.789
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation ('result_addr_1_write_ln36', code/matrix.c:36) of variable 'sub_ln36_1', code/matrix.c:36 on array 'result' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'result'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.404 seconds; current allocated memory: 108.536 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.209 seconds; current allocated memory: 110.811 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A_0', 'A_2', 'A_3', 'A_4', 'A_5', 'A_6', 'A_7', 'A_8', 'A_9', 'A_10', 'A_11', 'A_12', 'A_13', 'A_14', 'A_15', 'A_16', 'A_17', 'A_18', 'A_19', 'A_20', 'A_21', 'A_22', 'A_23', 'A_24', 'A_25', 'A_26', 'A_27', 'A_28', 'A_29', 'A_30', 'A_31', 'A_32', 'A_33', 'A_34', 'A_35', 'A_36', 'A_37', 'A_38', 'A_39', 'A_40', 'A_41', 'A_42', 'A_43', 'A_44', 'A_45', 'A_46', 'A_47', 'A_48', 'A_49', 'A_50', 'A_51', 'A_52', 'A_53', 'A_54', 'A_55', 'A_56', 'A_57', 'A_58', 'A_59', 'A_60', 'A_61', 'A_62', 'A_63', 'B_0', 'B_1', 'B_2', 'B_3', 'B_4', 'B_5', 'B_6', 'B_7', 'B_8', 'B_9', 'B_10', 'B_11', 'B_12', 'B_13', 'B_14', 'B_15', 'B_16', 'B_17', 'B_18', 'B_19', 'B_20', 'B_21', 'B_22', 'B_23', 'B_24', 'B_25', 'B_26', 'B_27', 'B_28', 'B_29', 'B_30', 'B_31', 'B_32', 'B_33', 'B_34', 'B_35', 'B_36', 'B_37', 'B_38', 'B_39', 'B_40', 'B_41', 'B_42', 'B_43', 'B_44', 'B_45', 'B_46', 'B_47', 'B_48', 'B_49', 'B_50', 'B_51', 'B_52', 'B_53', 'B_54', 'B_55', 'B_56', 'B_57', 'B_58', 'B_59', 'B_60', 'B_61', 'B_62', 'B_63' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Generating core module 'calc_mux_83_32_1_1': 22 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 1.337 seconds; current allocated memory: 114.330 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 191.695 ; gain = 100.141
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 8.899 seconds; peak allocated memory: 114.330 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:21) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:34) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:23) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:25) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:36) in function 'calc' completely with a factor of 8.
+WARNING: [XFORM 203-104] Completely partitioning array 'A' (code/matrix.c:4) accessed through non-constant indices on dimension 1 (code/matrix.c:26:17), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'A' (code/matrix.c:4) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'B' (code/matrix.c:5) accessed through non-constant indices on dimension 1 (code/matrix.c:37:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'B' (code/matrix.c:5) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'result' (code/matrix.c:6) accessed through non-constant indices on dimension 1 (code/matrix.c:37:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'result' (code/matrix.c:6) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'tmp' (code/matrix.c:13) accessed through non-constant indices on dimension 1 (code/matrix.c:37:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'tmp' (code/matrix.c:13) in dimension 1 completely.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...104 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 183.965 ; gain = 92.465
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.786 seconds; current allocated memory: 110.440 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.231 seconds; current allocated memory: 112.986 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_32' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_33' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_34' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_35' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_36' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_37' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_38' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_39' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_40' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_41' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_42' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_43' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_44' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_45' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_46' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_47' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_48' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_49' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_50' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_51' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_52' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_53' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_54' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_55' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_56' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_57' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_58' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_59' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_60' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_61' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_62' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B_63' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_0' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_1' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_2' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_3' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_4' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_5' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_6' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_7' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_8' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_9' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_10' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_11' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_12' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_13' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_14' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_15' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_16' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_17' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_18' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_19' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_20' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_21' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_22' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_23' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_24' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_25' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_26' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_27' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_28' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_29' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_30' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_31' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_32' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_33' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_34' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_35' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_36' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_37' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_38' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_39' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_40' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_41' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_42' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_43' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_44' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_45' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_46' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_47' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_48' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_49' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_50' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_51' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_52' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_53' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_54' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_55' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_56' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_57' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_58' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_59' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_60' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_61' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_62' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result_63' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A_0', 'A_2', 'A_3', 'A_4', 'A_5', 'A_6', 'A_7', 'A_8', 'A_9', 'A_10', 'A_11', 'A_12', 'A_13', 'A_14', 'A_15', 'A_16', 'A_17', 'A_18', 'A_19', 'A_20', 'A_21', 'A_22', 'A_23', 'A_24', 'A_25', 'A_26', 'A_27', 'A_28', 'A_29', 'A_30', 'A_31', 'A_32', 'A_33', 'A_34', 'A_35', 'A_36', 'A_37', 'A_38', 'A_39', 'A_40', 'A_41', 'A_42', 'A_43', 'A_44', 'A_45', 'A_46', 'A_47', 'A_48', 'A_49', 'A_50', 'A_51', 'A_52', 'A_53', 'A_54', 'A_55', 'A_56', 'A_57', 'A_58', 'A_59', 'A_60', 'A_61', 'A_62', 'A_63', 'B_0', 'B_1', 'B_2', 'B_3', 'B_4', 'B_5', 'B_6', 'B_7', 'B_8', 'B_9', 'B_10', 'B_11', 'B_12', 'B_13', 'B_14', 'B_15', 'B_16', 'B_17', 'B_18', 'B_19', 'B_20', 'B_21', 'B_22', 'B_23', 'B_24', 'B_25', 'B_26', 'B_27', 'B_28', 'B_29', 'B_30', 'B_31', 'B_32', 'B_33', 'B_34', 'B_35', 'B_36', 'B_37', 'B_38', 'B_39', 'B_40', 'B_41', 'B_42', 'B_43', 'B_44', 'B_45', 'B_46', 'B_47', 'B_48', 'B_49', 'B_50', 'B_51', 'B_52', 'B_53', 'B_54', 'B_55', 'B_56', 'B_57', 'B_58', 'B_59', 'B_60', 'B_61', 'B_62', 'B_63', 'result_0', 'result_1', 'result_2', 'result_3', 'result_4', 'result_5', 'result_6', 'result_7', 'result_8', 'result_9', 'result_10', 'result_11', 'result_12', 'result_13', 'result_14', 'result_15', 'result_16', 'result_17', 'result_18', 'result_19', 'result_20', 'result_21', 'result_22', 'result_23', 'result_24', 'result_25', 'result_26', 'result_27', 'result_28', 'result_29', 'result_30', 'result_31', 'result_32', 'result_33', 'result_34', 'result_35', 'result_36', 'result_37', 'result_38', 'result_39', 'result_40', 'result_41', 'result_42', 'result_43', 'result_44', 'result_45', 'result_46', 'result_47', 'result_48', 'result_49', 'result_50', 'result_51', 'result_52', 'result_53', 'result_54', 'result_55', 'result_56', 'result_57', 'result_58', 'result_59', 'result_60', 'result_61', 'result_62' and 'result_63' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Generating core module 'calc_mux_83_32_1_1': 22 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 1.944 seconds; current allocated memory: 116.802 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 198.391 ; gain = 106.891
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 10.74 seconds; peak allocated memory: 116.802 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.929 seconds; current allocated memory: 101.287 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.059 seconds; current allocated memory: 101.713 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.096 seconds; current allocated memory: 102.258 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.543 ; gain = 94.461
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 4.787 seconds; peak allocated memory: 102.258 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 15.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.004 seconds; current allocated memory: 104.635 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.179 seconds; current allocated memory: 106.170 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.277 seconds; current allocated memory: 109.268 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 184.355 ; gain = 92.828
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 6.719 seconds; peak allocated memory: 109.268 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 3.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.04 seconds; current allocated memory: 101.806 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.069 seconds; current allocated memory: 102.295 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.119 seconds; current allocated memory: 103.244 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 184.105 ; gain = 92.582
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.035 seconds; peak allocated memory: 103.244 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'tmp' (code/matrix.c:13) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'tmp' (code/matrix.c:13) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 5.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.014 seconds; current allocated memory: 101.415 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.054 seconds; current allocated memory: 101.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'B' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.096 seconds; current allocated memory: 102.507 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 184.504 ; gain = 92.938
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 4.838 seconds; peak allocated memory: 102.507 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 15.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.195 seconds; current allocated memory: 104.635 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 106.185 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.276 seconds; current allocated memory: 109.283 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 185.234 ; gain = 93.707
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.83 seconds; peak allocated memory: 109.283 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.759 seconds; current allocated memory: 101.299 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.067 seconds; current allocated memory: 101.724 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.094 seconds; current allocated memory: 102.270 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 184.078 ; gain = 116.848
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 7.772 seconds; peak allocated memory: 102.270 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'code/matrix.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (code/matrix.c:15) in function 'calc' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (code/matrix.c:28) in function 'calc' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (code/matrix.c:17) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (code/matrix.c:19) in function 'calc' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (code/matrix.c:30) in function 'calc' completely with a factor of 8.
+INFO: [XFORM 203-11] Balancing expressions in function 'calc' (code/matrix.c:4)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'calc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 15.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.325 seconds; current allocated memory: 104.651 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.172 seconds; current allocated memory: 106.201 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/A' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/B' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'calc/result' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'calc' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'A' and 'result' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'calc'.
+INFO: [HLS 200-111]  Elapsed time: 0.282 seconds; current allocated memory: 109.299 MB.
+INFO: [RTMG 210-278] Implementing memory 'calc_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 184.910 ; gain = 93.406
+INFO: [VHDL 208-304] Generating VHDL RTL for calc.
+INFO: [VLOG 209-307] Generating Verilog RTL for calc.
+INFO: [HLS 200-112] Total elapsed time: 5.963 seconds; peak allocated memory: 109.299 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.

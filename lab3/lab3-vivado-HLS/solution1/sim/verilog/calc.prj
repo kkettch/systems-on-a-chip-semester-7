@@ -1,0 +1,7 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_slave_AXILiteS.v"
+sv xil_defaultlib "calc.autotb.v"
+sv xil_defaultlib "calc.v"
+sv xil_defaultlib "calc_AXILiteS_s_axi.v"
+sv xil_defaultlib "calc_tmp.v"
+

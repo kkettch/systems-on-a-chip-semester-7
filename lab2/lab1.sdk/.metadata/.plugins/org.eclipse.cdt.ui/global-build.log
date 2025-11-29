@@ -143,3 +143,615 @@ mb-size prog1.elf  |tee "prog1.elf.size"
    2792	    268	   3108	   6168	   1818	prog1.elf
 'Finished building: prog1.elf.size'
 ' '
+10:19:40 **** Build of project prog1_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+'Finished building libraries'
+10:20:25 **** Clean-only build of configuration Debug for project prog1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/matrix.o ./src/platform.o  ./src/helloworld.d ./src/matrix.d ./src/platform.d  prog1.elf.size  prog1.elf
+' '
+10:20:26 **** Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  12368	   1308	   3172	  16848	   41d0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:29:16 **** Build of project prog1_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/bram_v4_3/src"
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_9/src"
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_4/src"
+make -C microblaze_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/standalone_v7_0/src"
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+'Finished building libraries'
+10:29:48 **** Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+../src/matrix.c: In function 'create_ones_matrix':
+../src/matrix.c:4:27: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+     int** matrix = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:4:27: warning: incompatible implicit declaration of built-in function 'malloc'
+../src/matrix.c:4:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+../src/matrix.c:2:1:
++#include <stdlib.h>
+ 
+../src/matrix.c:4:27:
+     int** matrix = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:4:34: error: 'matrix_size' undeclared (first use in this function); did you mean 'matrix'?
+     int** matrix = (int**)malloc(matrix_size * sizeof(int*));
+                                  ^~~~~~~~~~~
+                                  matrix
+../src/matrix.c:4:34: note: each undeclared identifier is reported only once for each function it appears in
+../src/matrix.c: In function 'create_sequence_matrix':
+../src/matrix.c:15:27: warning: incompatible implicit declaration of built-in function 'malloc'
+     int** matrix = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:15:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+../src/matrix.c:15:34: error: 'matrix_size' undeclared (first use in this function); did you mean 'matrix'?
+     int** matrix = (int**)malloc(matrix_size * sizeof(int*));
+                                  ^~~~~~~~~~~
+                                  matrix
+../src/matrix.c: In function 'execute':
+../src/matrix.c:31:2: warning: implicit declaration of function 'Xil_Out16' [-Wimplicit-function-declaration]
+  Xil_Out16(GPIO_BASE_ADDR, LD0);
+  ^~~~~~~~~
+../src/matrix.c:31:12: error: 'GPIO_BASE_ADDR' undeclared (first use in this function)
+  Xil_Out16(GPIO_BASE_ADDR, LD0);
+            ^~~~~~~~~~~~~~
+../src/matrix.c:31:28: error: 'LD0' undeclared (first use in this function)
+  Xil_Out16(GPIO_BASE_ADDR, LD0);
+                            ^~~
+../src/matrix.c:33:28: error: 'LD1' undeclared (first use in this function)
+  Xil_Out16(GPIO_BASE_ADDR, LD1);
+                            ^~~
+../src/matrix.c:36:25: error: 'matrix_size' undeclared (first use in this function)
+     for (int i = 0; i < matrix_size; i++) {
+                         ^~~~~~~~~~~
+../src/matrix.c:38:7: error: unknown type name 'uint16_t'
+       uint16_t led_value = (uint16_t)(result[i][j] & 0xFFFF);
+       ^~~~~~~~
+../src/matrix.c:38:29: error: 'uint16_t' undeclared (first use in this function)
+       uint16_t led_value = (uint16_t)(result[i][j] & 0xFFFF);
+                             ^~~~~~~~
+../src/matrix.c:42:7: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+       xil_printf("LEDs show result[%d][%d] = 0x%04X\r\n", i, j, led_value);
+       ^~~~~~~~~~
+../src/matrix.c:44:7: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+       sleep(1);
+       ^~~~~
+../src/matrix.c:53:2: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  free(A);
+  ^~~~
+../src/matrix.c:53:2: warning: incompatible implicit declaration of built-in function 'free'
+../src/matrix.c:53:2: note: include '<stdlib.h>' or provide a declaration of 'free'
+../src/matrix.c: In function 'create_matrix':
+../src/matrix.c:69:27: warning: incompatible implicit declaration of built-in function 'malloc'
+     int **matrix = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:69:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+../src/matrix.c:69:34: error: 'matrix_size' undeclared (first use in this function); did you mean 'matrix'?
+     int **matrix = (int**)malloc(matrix_size * sizeof(int*));
+                                  ^~~~~~~~~~~
+                                  matrix
+../src/matrix.c: In function 'multiply_matrices':
+../src/matrix.c:78:27: warning: incompatible implicit declaration of built-in function 'malloc'
+     int **result = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:78:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+../src/matrix.c:78:34: error: 'matrix_size' undeclared (first use in this function)
+     int **result = (int**)malloc(matrix_size * sizeof(int*));
+                                  ^~~~~~~~~~~
+../src/matrix.c: In function 'subtract_matrices':
+../src/matrix.c:96:27: warning: incompatible implicit declaration of built-in function 'malloc'
+     int **result = (int**)malloc(matrix_size * sizeof(int*));
+                           ^~~~~~
+../src/matrix.c:96:27: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+../src/matrix.c:96:34: error: 'matrix_size' undeclared (first use in this function)
+     int **result = (int**)malloc(matrix_size * sizeof(int*));
+                                  ^~~~~~~~~~~
+../src/matrix.c: In function 'free_matrix':
+../src/matrix.c:111:25: error: 'matrix_size' undeclared (first use in this function); did you mean 'matrix'?
+     for (int i = 0; i < matrix_size; i++) {
+                         ^~~~~~~~~~~
+                         matrix
+../src/matrix.c:112:9: warning: incompatible implicit declaration of built-in function 'free'
+         free(matrix[i]);
+         ^~~~
+../src/matrix.c:112:9: note: include '<stdlib.h>' or provide a declaration of 'free'
+../src/matrix.c:114:5: warning: incompatible implicit declaration of built-in function 'free'
+     free(matrix);
+     ^~~~
+../src/matrix.c:114:5: note: include '<stdlib.h>' or provide a declaration of 'free'
+make: *** [src/subdir.mk:29: src/matrix.o] Error 1
+10:29:54 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  12368	   1308	   3172	  16848	   41d0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:30:18 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+make: Nothing to be done for 'all'.
+10:30:21 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+make: Nothing to be done for 'all'.
+10:30:47 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  12368	   1308	   3172	  16848	   41d0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:31:39 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: ./src/helloworld.o: in function `get_value':
+H:\lab1\lab1.sdk\prog1\Debug/../src/helloworld.c:71: multiple definition of `get_value'; ./src/gpio.o:H:\lab1\lab1.sdk\prog1\Debug/../src/gpio.c:3: first defined here
+c:/xilinx/sdk/2019.1/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/8.2.0/../../../../microblaze-xilinx-elf/bin/ld.exe: ./src/helloworld.o: in function `send_value':
+H:\lab1\lab1.sdk\prog1\Debug/../src/helloworld.c:84: multiple definition of `send_value'; ./src/gpio.o:H:\lab1\lab1.sdk\prog1\Debug/../src/gpio.c:16: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: prog1.elf] Error 1
+10:31:59 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:76:23: warning: implicit declaration of function 'get_value' [-Wimplicit-function-declaration]
+             A[i][j] = get_value();
+                       ^~~~~~~~~
+../src/helloworld.c:94:13: warning: implicit declaration of function 'send_value' [-Wimplicit-function-declaration]
+             send_value(C[i][j]);
+             ^~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:32:45 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:94:13: warning: implicit declaration of function 'send_value'; did you mean 'get_value'? [-Wimplicit-function-declaration]
+             send_value(C[i][j]);
+             ^~~~~~~~~~
+             get_value
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:32:48 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:94:13: warning: implicit declaration of function 'send_value'; did you mean 'get_value'? [-Wimplicit-function-declaration]
+             send_value(C[i][j]);
+             ^~~~~~~~~~
+             get_value
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:33:06 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:33:09 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+10:47:24 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+11:05:36 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:12:21 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:22:59 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:28:51 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:49:05 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:51:48 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:54:13 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+12:58:33 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/matrix.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/matrix.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/matrix.d" -MT"src/matrix.o" -o "src/matrix.o" "../src/matrix.c"
+'Finished building: ../src/matrix.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '
+13:31:51 **** Auto Build of configuration Debug for project prog1 ****
+make all 
+'Building file: ../src/gpio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gpio.o" -I../../prog1_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -o "src/gpio.o" "../src/gpio.c"
+'Finished building: ../src/gpio.c'
+' '
+'Building target: prog1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../prog1_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "prog1.elf"  ./src/gpio.o ./src/helloworld.o ./src/matrix.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: prog1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size prog1.elf  |tee "prog1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  13628	   1308	   3176	  18112	   46c0	prog1.elf
+'Finished building: prog1.elf.size'
+' '

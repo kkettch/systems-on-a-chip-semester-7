@@ -63,53 +63,42 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include "xil_io.h"
-
-#define GPIO_OUT 0x40000000
-#define GPIO_IN 0x40000008
-#define MATRIX_SIZE 9
-
-int get_value(){
-	int value = Xil_In16(GPIO_IN);
-	while ((value & 0x8000) == 0) {
-		value = Xil_In16(GPIO_IN);
-	}
-	value = value & 0x00FF;
-
-	Xil_Out16(GPIO_OUT, 0x8000);
-	Xil_Out16(GPIO_OUT, 0x0000);
-
-	return value;
-}
-
-void send_value(int value) {
-	value = value | 0x4000; //value + strb
-	Xil_Out16(GPIO_OUT, value);
-	Xil_Out16(GPIO_OUT, 0x0000);
-}
+#include "matrix.h"
+#include "gpio.h"
 
 int main() {
-	init_platform();
+    init_platform();
 
-	int A [MATRIX_SIZE];
-	int B [MATRIX_SIZE];
-	int C [MATRIX_SIZE] = {0};
+    // read values into matrix A
+    int **A = create_matrix();
+    for (int i = 0; i < MATRIX_SIZE; i++) {
+        for (int j = 0; j < MATRIX_SIZE; j++) {
+            A[i][j] = get_value();
+        }
+    }
 
-	for (int i = 0; i < MATRIX_SIZE; i++) {
-		A[i] = get_value();
-	}
+    // read values into matrix B
+    int **B = create_matrix();
+    for (int i = 0; i < MATRIX_SIZE; i++) {
+        for (int j = 0; j < MATRIX_SIZE; j++) {
+            B[i][j] = get_value();
+        }
+    }
 
-	for (int i = 0; i < MATRIX_SIZE; i++) {
-		B[i] = get_value();
-	}
+    // calculate function C = A * B - B
+    int **C = calculate_function(A, B);
 
-	for (int i = 0; i < MATRIX_SIZE; i++) {
-		C[i] = A[i] + B[i];
-	}
+    // send matrix C
+    for (int i = 0; i < MATRIX_SIZE; i++) {
+        for (int j = 0; j < MATRIX_SIZE; j++) {
+            send_value(C[i][j]);
+        }
+    }
 
-	for (int i = 0; i < MATRIX_SIZE; i++) {
-		send_value(C[i]);
-	}
+    free_matrix(A);
+    free_matrix(B);
+    free_matrix(C);
 
-	cleanup_platform();
-	return 0;
+    cleanup_platform();
+    return 0;
 }

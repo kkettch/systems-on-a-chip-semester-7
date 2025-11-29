@@ -1,0 +1,12 @@
+#ifndef MATRIH_H
+#define MATRIH_H
+
+#define MATRIX_SIZE 5
+
+int **create_matrix();
+void free_matrix(int **matrix);
+int **multiply_matrices(int **A, int **B);
+int **subtract_matrices(int **A, int **B);
+int **calculate_function(int **A, int **B);
+
+#endif

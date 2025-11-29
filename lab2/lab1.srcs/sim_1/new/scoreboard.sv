@@ -1,15 +1,38 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 28.10.2025 14:31:11
+// Design Name: 
+// Module Name: scoreboard
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
-module scoreboard(
+
+module scoreboard#(
+    parameter int SIZE = 64,
+    parameter int ROW = 8
+)(
     input  logic        clk_i,
     input  logic        rst_i,
-    input  logic [15:0] matrix_input [9],
+    input  logic [15:0] matrix_input [SIZE],
     input  logic        matrix_vld,
-    input  logic [15:0] result_matrix [9],
-    input  logic        result_vld
+    input  logic [15:0] result_matrix [SIZE],
+    input  logic        result_vld,
+    output logic [15:0] expected_matrix[SIZE]
 );
 
-    // Состояния автомата
     typedef enum logic [1:0] {
         WAIT_A      = 2'd0,
         WAIT_B      = 2'd1,
@@ -19,22 +42,22 @@ module scoreboard(
 
     state_t state;
 
-    // Храним матрицы A и B
-    logic [15:0] matrix_a [9];
-    logic [15:0] matrix_b [9];
-    logic [31:0] product_matrix [9];
+    logic [15:0] matrix_a [SIZE];
+    logic [15:0] matrix_b [SIZE];
+    logic [15:0] product_matrix [SIZE];   
 
-    // Переменные для внутреннего подсчёта
-    integer i, j, k;
-    integer sum;
-    integer errors;
-
+    int i, j, k;
+    int errors;
+    int sum;
+    
     always_ff @(posedge clk_i) begin
         if (rst_i) begin
             state <= WAIT_A;
-            for (i = 0; i < 9; i++) begin
-                matrix_a[i] <= '0;
-                matrix_b[i] <= '0;
+            errors <= 0;
+
+            for (i = 0; i < SIZE; i++) begin
+                matrix_a[i]       <= '0;
+                matrix_b[i]       <= '0;
                 product_matrix[i] <= '0;
             end
         end
@@ -42,50 +65,61 @@ module scoreboard(
             case (state)
                 WAIT_A: begin
                     if (matrix_vld) begin
-                        matrix_a <= matrix_input;
+                        for (i = 0; i < SIZE; i++)
+                            matrix_a[i] <= matrix_input[i];
                         state <= WAIT_B;
                     end
                 end
-
                 WAIT_B: begin
                     if (matrix_vld) begin
-                        matrix_b <= matrix_input;
+                        for (i = 0; i < SIZE; i++)
+                            matrix_b[i] <= matrix_input[i];
                         state <= WAIT_RESULT;
                     end
                 end
-
                 WAIT_RESULT: begin
+                    for (i = 0; i < ROW; i++) begin
+                        for (j = 0; j < ROW; j++) begin
+                            sum = 0;
+                            for (k = 0; k < ROW; k++) begin
+                                sum += matrix_a[i*ROW + k] * matrix_b[k*ROW + j];
+                            end
+                            product_matrix[i*ROW + j] = (sum - matrix_b[i*ROW + j]) & 16'h3FFF;
+                        end
+                    end
+                    for (i = 0; i < SIZE; i++) begin
+                        expected_matrix[i] = product_matrix[i];
+                    end
                     if (result_vld)
                         state <= CHECK;
                 end
-
                 CHECK: begin
                     errors = 0;
-
-                    // ---- Вычисляем A*B - B ----
-                    for (i = 0; i < 3; i++) begin
-                        for (j = 0; j < 3; j++) begin
-                            sum = 0;
-                            for (k = 0; k < 3; k++) begin
-                                sum += matrix_a[i*3 + k] * matrix_b[k*3 + j];
-                            end
-                            product_matrix[i*3 + j] = sum - matrix_b[i*3 + j];
-                        end
-                    end
-
-                    // ---- Проверяем ----
-                    for (i = 0; i < 9; i++) begin
-                        if (product_matrix[i][15:0] !== result_matrix[i]) begin
-                            $display("? Incorrect result at index %0d: expected=%0h, got=%0h",
-                                     i, product_matrix[i][15:0], result_matrix[i]);
+//                    for (i = 0; i < ROW; i++) begin
+//                        for (j = 0; j < ROW; j++) begin
+//                            sum = 0;
+//                            for (k = 0; k < ROW; k++) begin
+//                                sum += matrix_a[i*ROW + k] * matrix_b[k*ROW + j];
+//                            end
+//                            product_matrix[i*ROW + j] = (sum - matrix_b[i*ROW + j]) & 16'h3FFF;
+//                        end
+//                    end
+//                    for (i = 0; i < SIZE; i++) begin
+//                        expected_matrix[i] = product_matrix[i];
+//                    end
+                    for (i = 0; i < SIZE; i++) begin
+                        if (product_matrix[i] !== result_matrix[i]) begin
+                            $display("Mismatch [%0d]: expected=%0h, got=%0h",
+                                     i, product_matrix[i], result_matrix[i]);
                             errors++;
+                        end else begin
+                            $display("Match [%0d]: %0h", i, result_matrix[i]);
                         end
                     end
-
                     if (errors == 0)
-                        $display("? RESULT CORRECT (A*B - B = result)");
+                        $display("RESULT CORRECT: (A*B - B) mod 16 bits");
                     else
-                        $display("?? Total mismatches: %0d", errors);
+                        $display("Total mismatches: %0d", errors);
 
                     $finish;
                 end

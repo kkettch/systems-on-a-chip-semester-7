@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="calc" xd:componentRef="calc" xd:initiationInterval="203" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="A[]" xd:originalName="A" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x100" xd:arraySize="64" xd:dataWidth="32"/>
+  <xd:arg xd:name="B[]" xd:originalName="B" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x200" xd:arraySize="64" xd:dataWidth="32"/>
+  <xd:arg xd:name="result[]" xd:originalName="result" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x300" xd:arraySize="64" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="202" xd:worst-case="202" xd:average-case="202"/>
+  <xd:resourceEstimates xd:LUT="4914" xd:FF="5731" xd:BRAM="8" xd:DSP="192"/>
+</xd:acceleratorMap>

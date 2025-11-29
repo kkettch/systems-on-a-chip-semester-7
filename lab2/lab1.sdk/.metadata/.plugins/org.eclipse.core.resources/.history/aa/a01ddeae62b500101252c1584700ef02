@@ -1,0 +1,20 @@
+#include "gpio.h"
+
+int get_value(){
+	int value = Xil_In16(GPIO_IN);
+	while ((value & 0x8000) == 0) {
+		value = Xil_In16(GPIO_IN);
+	}
+	value = value & 0x00FF;
+
+	Xil_Out16(GPIO_OUT, 0x8000);
+	Xil_Out16(GPIO_OUT, 0x0000);
+
+	return value;
+}
+
+void send_value(int value) {
+	value = value | 0x4000;
+	Xil_Out16(GPIO_OUT, value);
+	Xil_Out16(GPIO_OUT, 0x0000);
+}

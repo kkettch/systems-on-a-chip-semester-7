@@ -1,20 +1,69 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
 Block Memory Generator module dev_tb.DUT.design_1_i.microblaze_0_local_memory.lmb_bram.inst.native_mem_mapped_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 68 is not valid.
-WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 69 is not valid.
-WARNING: File/Multi-channel descriptor (-20000) passed to $fclose in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 70 is not valid.
-WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 68 is not valid.
-WARNING: File descriptor (-20000) passed to $fwrite in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 69 is not valid.
-WARNING: File/Multi-channel descriptor (-20000) passed to $fclose in file H:/lab1/lab1.srcs/sim_1/new/monitor.sv at line 70 is not valid.
-? Incorrect result at index 0: expected=22, got=3
-? Incorrect result at index 1: expected=27, got=5
-? Incorrect result at index 2: expected=2c, got=7
-? Incorrect result at index 3: expected=4c, got=9
-? Incorrect result at index 4: expected=5a, got=b
-? Incorrect result at index 5: expected=68, got=d
-? Incorrect result at index 6: expected=76, got=f
-? Incorrect result at index 7: expected=8d, got=11
-? Incorrect result at index 8: expected=a4, got=13
-?? Total mismatches: 9
-$finish called at time : 49035 ns : File "H:/lab1/lab1.srcs/sim_1/new/scoreboard.sv" Line 90
+Match [0]: 200c
+Match [1]: 2373
+Match [2]: 12a3
+Match [3]: 3e8f
+Match [4]: 2aee
+Match [5]: 12de
+Match [6]: c70
+Match [7]: fca
+Match [8]: 313e
+Match [9]: a6b
+Match [10]: 1a94
+Match [11]: 1e3a
+Match [12]: 5d0
+Match [13]: 670
+Match [14]: 17d2
+Match [15]: 223e
+Match [16]: 9da
+Match [17]: dfa
+Match [18]: 3b83
+Match [19]: 2fcf
+Match [20]: 26d6
+Match [21]: 37d3
+Match [22]: 1d4c
+Match [23]: 3b54
+Match [24]: 28af
+Match [25]: 3290
+Match [26]: 3ffc
+Match [27]: fdf
+Match [28]: 31a0
+Match [29]: 380d
+Match [30]: 1546
+Match [31]: 3bfa
+Match [32]: 276f
+Match [33]: 334d
+Match [34]: 1786
+Match [35]: 1cd9
+Match [36]: 3034
+Match [37]: 3994
+Match [38]: 2470
+Match [39]: f32
+Match [40]: de4
+Match [41]: 2b78
+Match [42]: 1696
+Match [43]: 17c3
+Match [44]: 3ac
+Match [45]: 1a0c
+Match [46]: 295f
+Match [47]: 69f
+Match [48]: 1250
+Match [49]: 27a
+Match [50]: 3ee9
+Match [51]: 3700
+Match [52]: 34a1
+Match [53]: 29ef
+Match [54]: 19d1
+Match [55]: c61
+Match [56]: 138e
+Match [57]: 17f3
+Match [58]: 338
+Match [59]: 2430
+Match [60]: 2703
+Match [61]: 1f8d
+Match [62]: 244
+Match [63]: 108d
+RESULT CORRECT: (A*B - B) mod 16 bits
+$finish called at time : 1324945 ns : File "H:/lab1/lab1.srcs/sim_1/new/monitor.sv" Line 103

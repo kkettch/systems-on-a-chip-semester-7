@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('B_load_1', code/matrix.c:31) on array 'B' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'B'." projectName="lab3-vivado-HLS" solutionName="solution1" date="2025-11-27T11:43:42.883+0300" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('A_load_1', code/matrix.c:20) on array 'A' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'A'." projectName="lab3-vivado-HLS" solutionName="solution1" date="2025-11-27T11:43:42.846+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

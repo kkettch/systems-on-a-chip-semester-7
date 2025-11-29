@@ -19,15 +19,18 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module agent(
+module agent#(
+    parameter int SIZE = 64
+)(
     input clk_i,
     input rst_i,
     output [15:0] gpio_switch,
     output [15:0] gpio_led
     );
     
-    logic [15:0] tmp_sequence[9];
-    logic [15:0] result_sequence[9];
+    logic [15:0] expected_matrix[SIZE];
+    logic [15:0] tmp_sequence[SIZE];
+    logic [15:0] result_sequence[SIZE];
     logic sequence_valid, sequence_send, result_valid;
     
     sequencer sequencer_impl (
@@ -58,6 +61,8 @@ module agent(
         .input_matrix_i(tmp_sequence),
         .input_valid_i(sequence_valid),
         
+        .expected_matrix_i(expected_matrix),
+        
         .result_matrix_o(result_sequence),
         .result_valid(result_valid)
     );
@@ -70,7 +75,8 @@ module agent(
         .matrix_vld(sequence_valid),
         
         .result_matrix(result_sequence),
-        .result_vld(result_valid)
+        .result_vld(result_valid),
+        .expected_matrix(expected_matrix)
     );
     
 endmodule

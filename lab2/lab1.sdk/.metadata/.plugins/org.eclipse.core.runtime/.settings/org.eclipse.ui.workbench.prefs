@@ -1,3 +1,4 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.cdt.ui.presentation\tTorg.eclipse.cdt.ui.CEditor.presentation
 ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jface.textfont
 REMOTE_COMMANDS_VIEW_FONT=1|Consolas|15.75|0|WINDOWS|1|-21|0|0|0|400|0|0|0|-52|3|2|1|49|Consolas;

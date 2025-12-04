@@ -1,15 +1,15 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Thu Nov 27 16:28:08 2025
-//Host        : lab20 running 64-bit major release  (build 9200)
+//Date        : Thu Dec  4 10:20:41 2025
+//Host        : lab187 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=1,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=10,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=1,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=10,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (dip_switches_16bits_tri_i,
     gpio_rtl_tri_o,
@@ -176,7 +176,7 @@ module design_1
         .s_axi_wstrb(microblaze_0_axi_periph_M00_AXI_WSTRB),
         .s_axi_wvalid(microblaze_0_axi_periph_M00_AXI_WVALID),
         .tx(axi_uartlite_0_UART_TxD));
-  design_1_calc_0_0 calc_0
+  design_1_calc_0_1 calc_0
        (.ap_clk(microblaze_0_Clk),
         .ap_rst_n(rst_clk_wiz_1_100M_peripheral_aresetn),
         .s_axi_AXILiteS_ARADDR(microblaze_0_axi_periph_M02_AXI_ARADDR[9:0]),

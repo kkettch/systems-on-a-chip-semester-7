@@ -1,0 +1,395 @@
+
+=== Matrix A captured at 215000 ns ===
+A[0] = 003e
+A[1] = 0026
+A[2] = 0029
+A[3] = 0024
+A[4] = 0030
+A[5] = 003b
+A[6] = 0036
+A[7] = 0031
+A[8] = 0072
+A[9] = 002e
+A[10] = 003b
+A[11] = 0073
+A[12] = 0038
+A[13] = 0019
+A[14] = 00a1
+A[15] = 003d
+A[16] = 0040
+A[17] = 003d
+A[18] = 00a7
+A[19] = 002a
+A[20] = 0044
+A[21] = 0017
+A[22] = 0059
+A[23] = 0083
+A[24] = 007b
+A[25] = 0018
+A[26] = 009a
+A[27] = 0034
+A[28] = 007d
+A[29] = 0078
+A[30] = 006b
+A[31] = 0073
+A[32] = 0030
+A[33] = 0022
+A[34] = 001f
+A[35] = 009e
+A[36] = 0013
+A[37] = 0043
+A[38] = 002b
+A[39] = 002c
+A[40] = 006f
+A[41] = 0020
+A[42] = 0054
+A[43] = 001c
+A[44] = 0085
+A[45] = 00a3
+A[46] = 003a
+A[47] = 000b
+A[48] = 005e
+A[49] = 001c
+A[50] = 00aa
+A[51] = 007e
+A[52] = 0014
+A[53] = 001a
+A[54] = 003e
+A[55] = 0074
+A[56] = 003e
+A[57] = 0012
+A[58] = 0023
+A[59] = 0040
+A[60] = 0055
+A[61] = 0013
+A[62] = 0046
+A[63] = 0087
+
+=== Matrix B captured at 153125000 ns ===
+B[0] = 0018
+B[1] = 001f
+B[2] = 000f
+B[3] = 001a
+B[4] = 0011
+B[5] = 0063
+B[6] = 0040
+B[7] = 0092
+B[8] = 0038
+B[9] = 001c
+B[10] = 0023
+B[11] = 0035
+B[12] = 0023
+B[13] = 003d
+B[14] = 0078
+B[15] = 0075
+B[16] = 007f
+B[17] = 0029
+B[18] = 0034
+B[19] = 001d
+B[20] = 0062
+B[21] = 0012
+B[22] = 00a9
+B[23] = 003b
+B[24] = 0022
+B[25] = 003f
+B[26] = 0091
+B[27] = 0024
+B[28] = 0036
+B[29] = 0080
+B[30] = 000a
+B[31] = 0022
+B[32] = 0037
+B[33] = 0014
+B[34] = 0041
+B[35] = 007e
+B[36] = 000c
+B[37] = 002e
+B[38] = 002d
+B[39] = 0075
+B[40] = 001a
+B[41] = 005f
+B[42] = 003b
+B[43] = 002c
+B[44] = 000b
+B[45] = 007f
+B[46] = 003e
+B[47] = 0010
+B[48] = 0044
+B[49] = 008e
+B[50] = 00a9
+B[51] = 003b
+B[52] = 0015
+B[53] = 002f
+B[54] = 0039
+B[55] = 00a3
+B[56] = 001a
+B[57] = 0065
+B[58] = 0038
+B[59] = 0012
+B[60] = 000a
+B[61] = 0016
+B[62] = 0088
+B[63] = 005e
+Time 1234915000 ns | Expected[0] = 0ac7 | Result[0]=0ac7
+Time 1236265000 ns | Expected[1] = 05e6 | Result[1]=05e6
+Time 1237615000 ns | Expected[2] = 0da4 | Result[2]=0da4
+Time 1238965000 ns | Expected[3] = 096d | Result[3]=096d
+Time 1240315000 ns | Expected[4] = 0baa | Result[4]=0baa
+Time 1241665000 ns | Expected[5] = 098c | Result[5]=098c
+Time 1243015000 ns | Expected[6] = 1a51 | Result[6]=1a51
+Time 1244365000 ns | Expected[7] = 1063 | Result[7]=1063
+Time 1245925000 ns | Expected[8] = 009b | Result[8]=009b
+Time 1247275000 ns | Expected[9] = 1780 | Result[9]=1780
+Time 1248625000 ns | Expected[10] = 0590 | Result[10]=0590
+Time 1249975000 ns | Expected[11] = 1501 | Result[11]=1501
+Time 1251325000 ns | Expected[12] = 0fdb | Result[12]=0fdb
+Time 1252675000 ns | Expected[13] = 0db9 | Result[13]=0db9
+Time 1254025000 ns | Expected[14] = 1130 | Result[14]=1130
+Time 1255375000 ns | Expected[15] = 0a85 | Result[15]=0a85
+Time 1256935000 ns | Expected[16] = 012a | Result[16]=012a
+Time 1258285000 ns | Expected[17] = 063e | Result[17]=063e
+Time 1259635000 ns | Expected[18] = 1393 | Result[18]=1393
+Time 1260985000 ns | Expected[19] = 0efc | Result[19]=0efc
+Time 1262335000 ns | Expected[20] = 0597 | Result[20]=0597
+Time 1263685000 ns | Expected[21] = 1b2f | Result[21]=1b2f
+Time 1265035000 ns | Expected[22] = 06c1 | Result[22]=06c1
+Time 1266385000 ns | Expected[23] = 1580 | Result[23]=1580
+Time 1267945000 ns | Expected[24] = 1319 | Result[24]=1319
+Time 1269295000 ns | Expected[25] = 15c1 | Result[25]=15c1
+Time 1270645000 ns | Expected[26] = 01d8 | Result[26]=01d8
+Time 1271995000 ns | Expected[27] = 1cf9 | Result[27]=1cf9
+Time 1273345000 ns | Expected[28] = 0972 | Result[28]=0972
+Time 1274695000 ns | Expected[29] = 0922 | Result[29]=0922
+Time 1276045000 ns | Expected[30] = 199c | Result[30]=199c
+Time 1277395000 ns | Expected[31] = 0a5e | Result[31]=0a5e
+Time 1278955000 ns | Expected[32] = 0add | Result[32]=0add
+Time 1280305000 ns | Expected[33] = 18dc | Result[33]=18dc
+Time 1281655000 ns | Expected[34] = 0146 | Result[34]=0146
+Time 1283005000 ns | Expected[35] = 0706 | Result[35]=0706
+Time 1284355000 ns | Expected[36] = 1e00 | Result[36]=1e00
+Time 1285705000 ns | Expected[37] = 1bfe | Result[37]=1bfe
+Time 1287055000 ns | Expected[38] = 0aea | Result[38]=0aea
+Time 1288405000 ns | Expected[39] = 1efe | Result[39]=1efe
+Time 1289965000 ns | Expected[40] = 1c59 | Result[40]=1c59
+Time 1291315000 ns | Expected[41] = 104e | Result[41]=104e
+Time 1292665000 ns | Expected[42] = 1b9a | Result[42]=1b9a
+Time 1294015000 ns | Expected[43] = 0acc | Result[43]=0acc
+Time 1295365000 ns | Expected[44] = 0431 | Result[44]=0431
+Time 1296715000 ns | Expected[45] = 1a51 | Result[45]=1a51
+Time 1298065000 ns | Expected[46] = 14ab | Result[46]=14ab
+Time 1299415000 ns | Expected[47] = 14e3 | Result[47]=14e3
+Time 1300975000 ns | Expected[48] = 16ee | Result[48]=16ee
+Time 1302325000 ns | Expected[49] = 037e | Result[49]=037e
+Time 1303675000 ns | Expected[50] = 1ff3 | Result[50]=1ff3
+Time 1305025000 ns | Expected[51] = 18d9 | Result[51]=18d9
+Time 1306375000 ns | Expected[52] = 1151 | Result[52]=1151
+Time 1307725000 ns | Expected[53] = 1ba3 | Result[53]=1ba3
+Time 1309075000 ns | Expected[54] = 0ecb | Result[54]=0ecb
+Time 1310425000 ns | Expected[55] = 1685 | Result[55]=1685
+Time 1311985000 ns | Expected[56] = 1802 | Result[56]=1802
+Time 1313335000 ns | Expected[57] = 0838 | Result[57]=0838
+Time 1314685000 ns | Expected[58] = 16f0 | Result[58]=16f0
+Time 1316035000 ns | Expected[59] = 1da5 | Result[59]=1da5
+Time 1317385000 ns | Expected[60] = 1141 | Result[60]=1141
+Time 1318735000 ns | Expected[61] = 0fcb | Result[61]=0fcb
+Time 1320085000 ns | Expected[62] = 1bdc | Result[62]=1bdc
+Time 1321435000 ns | Expected[63] = 01f6 | Result[63]=01f6
+Time 1321765000 ns | Expected[0] = 0ac7 | Result[0]=01f6
+
+=== Matrix A captured at 1321775000 ns ===
+A[0] = 0074
+A[1] = 002b
+A[2] = 0036
+A[3] = 0014
+A[4] = 0020
+A[5] = 0011
+A[6] = 006e
+A[7] = 001c
+A[8] = 0076
+A[9] = 002a
+A[10] = 0085
+A[11] = 002f
+A[12] = 009c
+A[13] = 0092
+A[14] = 0094
+A[15] = 001c
+A[16] = 000d
+A[17] = 0084
+A[18] = 0055
+A[19] = 0070
+A[20] = 009f
+A[21] = 003b
+A[22] = 0023
+A[23] = 009a
+A[24] = 003e
+A[25] = 0021
+A[26] = 0018
+A[27] = 0028
+A[28] = 00a7
+A[29] = 0029
+A[30] = 001b
+A[31] = 0029
+A[32] = 0089
+A[33] = 007c
+A[34] = 0050
+A[35] = 007d
+A[36] = 0024
+A[37] = 006a
+A[38] = 0082
+A[39] = 00a7
+A[40] = 003d
+A[41] = 008c
+A[42] = 000c
+A[43] = 000e
+A[44] = 0077
+A[45] = 0066
+A[46] = 0054
+A[47] = 0037
+A[48] = 000a
+A[49] = 0041
+A[50] = 0015
+A[51] = 0022
+A[52] = 006a
+A[53] = 002b
+A[54] = 0045
+A[55] = 0073
+A[56] = 0081
+A[57] = 001f
+A[58] = 0014
+A[59] = 0026
+A[60] = 0073
+A[61] = 0045
+A[62] = 003d
+A[63] = 0061
+
+=== Matrix B captured at 1477555000 ns ===
+B[0] = 001f
+B[1] = 0082
+B[2] = 0019
+B[3] = 0072
+B[4] = 007f
+B[5] = 0044
+B[6] = 008b
+B[7] = 0045
+B[8] = 0077
+B[9] = 0045
+B[10] = 008e
+B[11] = 0020
+B[12] = 0042
+B[13] = 003d
+B[14] = 0022
+B[15] = 0022
+B[16] = 0033
+B[17] = 0032
+B[18] = 0030
+B[19] = 002b
+B[20] = 0022
+B[21] = 0050
+B[22] = 001d
+B[23] = 0022
+B[24] = 001f
+B[25] = 00a8
+B[26] = 009d
+B[27] = 002e
+B[28] = 001f
+B[29] = 006e
+B[30] = 003d
+B[31] = 0066
+B[32] = 00a8
+B[33] = 0034
+B[34] = 0019
+B[35] = 0024
+B[36] = 000d
+B[37] = 0045
+B[38] = 00a4
+B[39] = 0085
+B[40] = 0031
+B[41] = 00a2
+B[42] = 0033
+B[43] = 007e
+B[44] = 003b
+B[45] = 0045
+B[46] = 0035
+B[47] = 0068
+B[48] = 0039
+B[49] = 0011
+B[50] = 0031
+B[51] = 0010
+B[52] = 00a7
+B[53] = 0042
+B[54] = 0021
+B[55] = 0014
+B[56] = 0068
+B[57] = 001b
+B[58] = 001b
+B[59] = 0022
+B[60] = 0095
+B[61] = 009c
+B[62] = 0075
+B[63] = 003c
+Time 1846755000 ns | Expected[1] = 192d | Result[1]=0000
+Time 1848105000 ns | Expected[2] = 17fe | Result[2]=0000
+Time 1849455000 ns | Expected[3] = 1cb6 | Result[3]=0000
+Time 1850805000 ns | Expected[4] = 0b54 | Result[4]=0000
+Time 1852155000 ns | Expected[5] = 1ce4 | Result[5]=0000
+Time 1853505000 ns | Expected[6] = 0208 | Result[6]=0000
+Time 1854855000 ns | Expected[7] = 1a89 | Result[7]=0000
+Time 1856205000 ns | Expected[8] = 102f | Result[8]=0000
+Time 1857765000 ns | Expected[9] = 08a7 | Result[9]=0041
+Time 1859115000 ns | Expected[10] = 03a1 | Result[10]=0041
+Time 1860465000 ns | Expected[11] = 0339 | Result[11]=0041
+Time 1861815000 ns | Expected[12] = 16e1 | Result[12]=0041
+Time 1863165000 ns | Expected[13] = 0f7d | Result[13]=0041
+Time 1864515000 ns | Expected[14] = 01d2 | Result[14]=0041
+Time 1865865000 ns | Expected[15] = 0820 | Result[15]=0041
+Time 1867215000 ns | Expected[16] = 1739 | Result[16]=0041
+Time 1868775000 ns | Expected[17] = 1c49 | Result[17]=0000
+Time 1870125000 ns | Expected[18] = 1126 | Result[18]=0000
+Time 1871475000 ns | Expected[19] = 0290 | Result[19]=0000
+Time 1872825000 ns | Expected[20] = 0756 | Result[20]=0000
+Time 1874175000 ns | Expected[21] = 0ee8 | Result[21]=0004
+Time 1875525000 ns | Expected[22] = 19c3 | Result[22]=0008
+Time 1876875000 ns | Expected[23] = 1e38 | Result[23]=0008
+Time 1878225000 ns | Expected[24] = 0c76 | Result[24]=0000
+Time 1879785000 ns | Expected[25] = 08a5 | Result[25]=1d7c
+Time 1881135000 ns | Expected[26] = 16bf | Result[26]=1d7c
+Time 1882485000 ns | Expected[27] = 1d92 | Result[27]=1d84
+Time 1883835000 ns | Expected[28] = 0a95 | Result[28]=1d84
+Time 1885185000 ns | Expected[29] = 0899 | Result[29]=1d8c
+Time 1886535000 ns | Expected[30] = 1bc0 | Result[30]=1d8c
+Time 1887885000 ns | Expected[31] = 1af5 | Result[31]=1d94
+Time 1889235000 ns | Expected[32] = 155a | Result[32]=1d94
+Time 1890795000 ns | Expected[33] = 0d15 | Result[33]=0020
+Time 1892145000 ns | Expected[34] = 10da | Result[34]=0000
+Time 1893495000 ns | Expected[35] = 07ce | Result[35]=0041
+Time 1894845000 ns | Expected[36] = 0de8 | Result[36]=0041
+Time 1896195000 ns | Expected[37] = 1def | Result[37]=0041
+Time 1897545000 ns | Expected[38] = 0b27 | Result[38]=0154
+Time 1898895000 ns | Expected[39] = 005e | Result[39]=0d6c
+Time 1900245000 ns | Expected[40] = 1706 | Result[40]=13a4
+Time 1901805000 ns | Expected[41] = 13b5 | Result[41]=0718
+Time 1903155000 ns | Expected[42] = 1412 | Result[42]=0dac
+Time 1904505000 ns | Expected[43] = 0032 | Result[43]=1e58
+Time 1905855000 ns | Expected[44] = 19c6 | Result[44]=0574
+Time 1907205000 ns | Expected[45] = 0dcc | Result[45]=0530
+Time 1908555000 ns | Expected[46] = 1d85 | Result[46]=08fc
+Time 1909905000 ns | Expected[47] = 0484 | Result[47]=006c
+Time 1911255000 ns | Expected[48] = 1361 | Result[48]=197c
+Time 1912815000 ns | Expected[49] = 1266 | Result[49]=0102
+Time 1914165000 ns | Expected[50] = 09e2 | Result[50]=0659
+Time 1915515000 ns | Expected[51] = 0dcf | Result[51]=1cf2
+Time 1916865000 ns | Expected[52] = 1b36 | Result[52]=003f
+Time 1918215000 ns | Expected[53] = 0716 | Result[53]=1144
+Time 1919565000 ns | Expected[54] = 02ad | Result[54]=0aeb
+Time 1920915000 ns | Expected[55] = 0478 | Result[55]=09c5
+Time 1922265000 ns | Expected[56] = 13e0 | Result[56]=0717
+Time 1923825000 ns | Expected[57] = 17e8 | Result[57]=0fbe
+Time 1925175000 ns | Expected[58] = 07a0 | Result[58]=0307
+Time 1926525000 ns | Expected[59] = 0a34 | Result[59]=0dce
+Time 1927875000 ns | Expected[60] = 04a8 | Result[60]=0f61
+Time 1929225000 ns | Expected[61] = 1c0d | Result[61]=083c
+Time 1930575000 ns | Expected[62] = 012d | Result[62]=1c85
+Time 1931925000 ns | Expected[63] = 0bba | Result[63]=173b
+
+=== Algorithm finished ===
+Execution time: 610290000 ns

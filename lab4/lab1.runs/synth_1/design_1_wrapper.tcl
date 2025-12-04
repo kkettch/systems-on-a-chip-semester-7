@@ -25,47 +25,47 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir H:/lab4/lab4-vivado/lab1.cache/wt [current_project]
-set_property parent.project_path H:/lab4/lab4-vivado/lab1.xpr [current_project]
+set_property webtalk.parent_dir H:/lab-4-today/lab4-vivado/lab1.cache/wt [current_project]
+set_property parent.project_path H:/lab-4-today/lab4-vivado/lab1.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
-set_property ip_repo_paths h:/lab3-with-ip/lab3-vivado-HLS/solution1/impl/ip [current_project]
+set_property ip_repo_paths h:/lab3/lab3-vivado-HLS/solution1/impl/ip [current_project]
 update_ip_catalog
-set_property ip_output_repo h:/lab4/lab4-vivado/lab1.cache/ip [current_project]
+set_property ip_output_repo h:/lab-4-today/lab4-vivado/lab1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files H:/lab4/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf
-set_property SCOPED_TO_REF design_1 [get_files -all H:/lab4/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf]
-set_property SCOPED_TO_CELLS microblaze_0 [get_files -all H:/lab4/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf]
-read_verilog -library xil_defaultlib H:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-add_files H:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc_debug.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_calc_0_0_1/constraints/calc_ooc.xdc]
-set_property used_in_implementation false [get_files -all H:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+add_files H:/lab-4-today/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf
+set_property SCOPED_TO_REF design_1 [get_files -all H:/lab-4-today/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf]
+set_property SCOPED_TO_CELLS microblaze_0 [get_files -all H:/lab-4-today/lab4-vivado/lab1.sdk/prog1/Debug/prog1.elf]
+read_verilog -library xil_defaultlib H:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files H:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_calc_0_1/constraints/calc_ooc.xdc]
+set_property used_in_implementation false [get_files -all H:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/lab-4-today/lab4-vivado/lab1.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -75,8 +75,8 @@ set_property used_in_implementation false [get_files -all h:/lab4/lab4-vivado/la
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc H:/lab4/lab4-vivado/lab1.srcs/constrs_1/new/file1.xdc
-set_property used_in_implementation false [get_files H:/lab4/lab4-vivado/lab1.srcs/constrs_1/new/file1.xdc]
+read_xdc H:/lab-4-today/lab4-vivado/lab1.srcs/constrs_1/new/file1.xdc
+set_property used_in_implementation false [get_files H:/lab-4-today/lab4-vivado/lab1.srcs/constrs_1/new/file1.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

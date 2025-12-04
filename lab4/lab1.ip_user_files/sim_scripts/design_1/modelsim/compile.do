@@ -149,7 +149,7 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../lab1.srcs/sources_1/bd/
 "../../../../lab1.srcs/sources_1/bd/design_1/ipshared/e4a8/hdl/verilog/calc_AXILiteS_s_axi.v" \
 "../../../../lab1.srcs/sources_1/bd/design_1/ipshared/e4a8/hdl/verilog/calc_tmp.v" \
 "../../../../lab1.srcs/sources_1/bd/design_1/ipshared/e4a8/hdl/verilog/calc.v" \
-"../../../bd/design_1/ip/design_1_calc_0_0_1/sim/design_1_calc_0_0.v" \
+"../../../bd/design_1/ip/design_1_calc_0_1/sim/design_1_calc_0_1.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

@@ -1,0 +1,13 @@
+#ifndef GPIO_H
+#define GPIO_H
+
+#include "xil_io.h"
+#include "platform.h"
+
+#define GPIO_OUT 0x40000000
+#define GPIO_IN 0x40000008
+
+int get_value();
+void send_value(int value);
+
+#endif

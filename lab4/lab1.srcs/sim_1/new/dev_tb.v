@@ -22,29 +22,59 @@
 
 module dev_tb;
 
-wire [15:0] gpio_rtl_tri_o;
-reg reset;
-reg sys_clock;
-reg usb_uart_rxd;
-wire usb_uart_txd;
+reg clk;
+wire [15:0] gpio_switch;
+wire [14:0] gpio_switch_bus;
+wire [15:0] gpio_led;
+wire test_done;
+reg rst_n;
+reg mode_sw;
 
-design_1_wrapper uut
-   (.gpio_rtl_tri_o(gpio_rtl_tri_o),
-    .reset(reset),
-    .sys_clock(sys_clock),
-    .usb_uart_rxd(usb_uart_rxd),
-    .usb_uart_txd(usb_uart_txd));
-    
+agent agent_impl (
+    .clk_i(clk),
+    .rst_i(!rst_n),
+    .gpio_switch(gpio_switch_bus),
+    .gpio_led(gpio_led),
+    .test_done(test_done)
+);
+
+assign gpio_switch = {mode_sw, gpio_switch_bus};
+
+design_1_wrapper DUT (
+    .dip_switches_16bits_tri_i(gpio_switch),
+    .sys_clock(clk),
+    .gpio_rtl_tri_o(gpio_led),
+    .reset(rst_n)
+);
+
+
+
 initial begin
-    reset = 0;
-    sys_clock = 0;
-    usb_uart_rxd = 0;
-    
+    rst_n = 0;
+    mode_sw= 1'b1;
     #200
-    reset = 1;
+    rst_n = 1;
+    
+    @(posedge test_done);
+    $display("=== FIRST RUN (mode_sw = 1) DONE ===");
+    
+    #100
+    rst_n = 0;
+    mode_sw = 1'b0;
+    #200
+    rst_n = 1;
+    
+    @(posedge test_done);
+    $display("=== SECOND RUN (mode_sw = 0) DONE ===");
+    
+    #100
+    $finish;
+    
 end
 
-always #5 sys_clock = ~sys_clock;
-
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+end
     
 endmodule
